@@ -1,0 +1,61 @@
+<style media="screen">
+body {
+background: rgb(142,232,238);
+background: radial-gradient(circle, rgba(142,232,238,0.9) 30%, rgba(148,187,233,0.8) 100%);
+}
+
+
+
+p {
+  font-size:20px;
+}
+
+h2 {
+  color:#606060;
+}
+
+button {
+      color: white;
+      background-color: #606060;
+      font-size: 20px;
+}
+
+</style>
+
+<h1>Let's Dance Together</h1>
+<img src="landing.jpg" alt="dance" class="center"/>
+
+
+<div id="center">
+  <div id="Classes">
+    <h2>Classes:</h2>
+
+
+    <ul id = "classList">
+
+      {{#each classes}}
+
+      <p>
+        class name: {{this.classTitle}}, dance id: {{this.danceID}}, instructor ID: {{this.instructorID}}
+        <button data-classid="{{this.id}}" class="favorite">Add to Favorites</button>
+
+
+      </p>
+
+
+     
+        {{/each}}
+    </ul>
+
+  </div>
+</div>
+
+
+<div id = "addAclass">
+<h2 id = "addH2">Add The Class</h2>
+  <textarea id = "cl" type="text" name="className"></textarea>
+  <button id = "add" type="button">Submit </button>
+<p id = "add_b_p" >Enter a class name</p>
+</div>
+
+
