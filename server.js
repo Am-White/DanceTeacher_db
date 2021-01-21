@@ -30,7 +30,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
-// require("./routes/html-routes.js")(app);
+require("./routes/html-routes.js")(app);
 require("./routes/dance-api-routes.js")(app);
 require("./routes/class-api-routes.js")(app);
 require("./routes/instructor-api-routes.js")(app);

@@ -1,0 +1,45 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Dance Class Search</h1>
+    
+  </div>
+</div>
+
+
+<div class="card text-center" id="searchCard" style="max-width: 500px;">
+  <div class="card-header">
+    <h3>Search dance class</h3>
+  </div>
+  <div class="card-body">
+
+      <label for="teacher">Choose teacher:</label>
+    <select name="teacherName" id="searchTeacher">
+
+    {{#each}}
+        <option>{{instructor.name}}</option>
+    {{/each}}
+        
+    </select><br>
+
+    <label>Dance type</label>
+    <input type="search" id="searchType"><br>
+
+    <label>Location</label>
+    <input type="search" id="searchLocation"><br>
+
+    <label>Price per Hour</label>
+    <input type="search" id="searchPrice"><br>
+
+    <label>Rating</label>
+    <input type="search" id="searchRating" placeholder="Out of 5 stars"><br><br>
+    
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  <div class="card-footer text-muted">
+    
+  </div>
+</div>
+
+
+
+

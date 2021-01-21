@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "root",
-    "password": "kated14101987eco",
+    "password": "Kingtendencies3!",
     "database": "dance_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "kated14101987eco",
+    "password": "Kingtendencies3!",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "kated14101987eco",
+    "password": "Kingtendencies3!",
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"

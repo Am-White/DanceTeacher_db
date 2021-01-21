@@ -8,7 +8,7 @@ module.exports = function(app) {
 
   // index route loads index.handlebars
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.handlebars"));
+    res.render(path.join(__dirname, "../views/index.handlebars"));
   });
 
   // app.get("/cms", function(req, res) {
@@ -22,5 +22,11 @@ module.exports = function(app) {
   // app.get("/authors", function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/author-manager.html"));
   // });
+
+  //Amethyst Search handlebars
+  app.get("/search", function(req, res) {
+    res.render("search");
+  });
+
 
 };
