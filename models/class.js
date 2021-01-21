@@ -19,11 +19,11 @@ module.exports = function(sequelize, DataTypes) {
   
     Class.associate = function(models) {
       Class.belongsTo(models.Instructor, {
-        foreignKey: "id",
+        foreignKey: "danceID",
         as: "Instructor"
       });
       Class.belongsTo(models.Dance, {
-        foreignKey: "id",
+        foreignKey: "instructorID",
         as: "Dance"
       });
 

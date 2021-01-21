@@ -3,6 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   app.get("/api/classes", function(req, res) {
     db.Class.findAll({
+      include: [{model: db.Dance, as: "Dance"} , {model: db.Instructor, as: "Instructor"}]
     }).then(function(results) {
         res.json(results);
         console.log(results)

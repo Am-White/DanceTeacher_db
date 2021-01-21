@@ -13,6 +13,22 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/dances", function(req, res) {
+    var danceArray = [];
+    db.Dance.findAll({
+    }).then(function(results) {
+        results.forEach(element =>
+          danceArray.push(element.dataValues));
+        console.log(danceArray)
+        var hbsObject = {
+            dances: danceArray
+          };
+        console.log(hbsObject);
+        res.render("index", hbsObject); 
+
+    });
+  });
+
 
   app.post("/api/dances", function(req, res) {
     db.Dance.create(req.body).then(function(results) {
