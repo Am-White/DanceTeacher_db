@@ -14,9 +14,6 @@ module.exports = function(app) {
     var classArray = [];
     db.Class.findAll({
     }).then(function(results) {
-        // res.render("index", {results}); 
-        // res.json(results);
-
         results.forEach(element =>
             classArray.push(element.dataValues));
         console.log(classArray)
@@ -29,18 +26,25 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/classes/:danceId", function(req, res) {
-    // 2. Add a join here to include the Author who wrote the Post
+  app.get("/classes/:danceId/:instructorID", function(req, res) {
+    console.log(Object.values(req.params))
+    idParams = Object.values(req.params)
     db.Class.findOne({
-      include: [{
-        model: db.Dance
-      }],
+      include: 
+        [{model: db.Dance, as: "Dance"} , {model: db.Instructor, as: "Instructor"}],
       where: {
-        danceID: req.params.danceID
+        danceID: idParams[0],
+        instructorID: idParams[1]
       }
     }).then(function(results) {
-      console.log(results);
-      res.json(results);
+      // console.log(results);
+      // res.json(results);
+      console.log(results.dataValues.Dance.dataValues.danceTitle);
+      console.log(results.dataValues.Instructor.dataValues.name + " " + results.dataValues.Instructor.dataValues.lastName)
+      var selectedDanceName = results.dataValues.Dance.dataValues.danceTitle;
+      var selectedInstructorName = results.dataValues.Instructor.dataValues.name;
+      var selectedInstructorLastName = results.dataValues.Instructor.dataValues.lastName;
+      res.render("details", {name: selectedDanceName, instrName:selectedInstructorName, instLastName: selectedInstructorLastName});
     });
   });
 
