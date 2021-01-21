@@ -23,4 +23,11 @@ module.exports = function(app) {
   //   res.sendFile(path.join(__dirname, "../public/author-manager.html"));
   // });
 
+    //Amethyst Search handlebars
+    app.get("/search", function(req, res) {
+      res.render("search");
+    });
+  
+  
+
 };
