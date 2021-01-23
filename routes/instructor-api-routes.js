@@ -14,17 +14,7 @@ module.exports = function(app) {
 
   // GET route for getting all of the posts
   app.get("/api/instructors", function(req, res) {
-    // var query = {};
-    // if (req.query.author_id) {
-    //   query.AuthorId = req.query.author_id;
-    // }
-
     db.Instructor.findAll({
-      
-    //   include: [{
-    //   model: db.Author
-    // }],
-    // where: query
     }).then(function(results) {
       res.json(results);
       console.log(results);
@@ -34,7 +24,13 @@ module.exports = function(app) {
 
   // POST route for saving a new post
   app.post("/api/instructors", function(req, res) {
-    db.Instructor.create(req.body).then(function(results) {
+    db.Instructor.create({
+      name: req.body.name,
+      lastName: req.body.lastName,
+      rating: req.body.rating,
+      location: req.body.location,
+      hourlyRate: req.body.hourlyRate
+    }).then(function(results) {
       res.json(results);
     });
   });
