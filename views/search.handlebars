@@ -1,0 +1,70 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Dance Class Search</h1>
+
+  </div>
+</div>
+
+
+<div class="card text-center" id="searchCard" style="max-width: 500px;">
+  <div class="card-header">
+    <h3>Search dance class</h3>
+  </div>
+  <div class="card-body">
+
+    <p>Please search a class by:</p>
+
+{{!Select by teacher name}}
+      <label for="teacher">Teacher's name:</label>
+      <select name="teacherName" id="searchTeacher">
+
+    {{#each instructor}}
+        <option>{{this.nameT}} , {{this.lastName}}</option>
+    {{/each}}
+      </select><br>
+
+{{!Select by dance type}}
+      <label>Dance type:</label>
+      <select name="dance" id="searchType">
+      
+    {{#each dances}}
+      <option>{{this.danceTitle}}</option>
+    {{/each}}
+      </select><br><br>
+
+  <p>|| OR ||</p>
+
+{{!Select by location}}
+      <label>Location:</label>
+      <select name="location" id="searchLocation">
+
+    {{#each instructor}}
+      <option>{{this.location}}</option>
+    {{/each}}
+      </select><br>
+
+{{!Select by price}}
+    <label>Price per Hour:</label>
+    <select name="price" id="searchPrice">
+    
+    {{#each instructor}}
+      <option>{{this.hourlyRate}}</option>
+    {{/each}}
+      </select><br>
+
+{{!Select by rating -- commented out star icon}}
+    <label>Rating:</label>
+    <select name="rating" id="searchRating" placeholder="Out of 5 stars">
+      
+    {{#each instructor}}
+      <option>{{this.rating}} {{!<i class="bi bi-star"></i>}} </option>
+    {{/each}}
+      </select><br><br>
+
+    <a href="http://localhost:8080/details" class="btn btn-primary">Search</a>
+  </div>
+  <div class="card-footer text-muted">
+
+  </div>
+</div>
+

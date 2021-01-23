@@ -1,0 +1,52 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Dance Class Search</h1>
+
+  </div>
+</div>
+
+
+<div class="card text-center" id="searchCard" style="max-width: 500px;">
+  <div class="card-header">
+    <h3>Search dance class</h3>
+  </div>
+  <div class="card-body">
+
+{{!Enter teacher name}}
+      <label>Teacher:</label>
+      <search name="teacherName" id="newTeacher">
+          <input placeholder="First name">
+          <input placeholder="Last name">
+      </search><br>
+
+{{!Enter class name}}
+        <label>Name of class:</label>
+        <search name="title" id="newTitle">
+            <input>
+        </search><br>
+
+{{!Enter dance type}}
+      <label>Dance type:</label>
+      <search name="dance" id="newType">
+          <input>
+      </search><br>
+
+{{!Enter location}}
+      <label>Location:</label>
+      <search name="location" id="newLocation">
+          <input>
+      </search><br>
+
+{{!Enter price}}
+    <label>Price per Hour:</label>
+    <search name="price" id="newPrice">
+        <input>
+    </search><br><br>
+
+{{!NOTE-- redirect to login profile of teacher????}}
+    <a href="http://localhost:8080/" class="btn btn-primary">Add new Class</a>
+  </div>
+  <div class="card-footer text-muted">
+
+  </div>
+</div>
