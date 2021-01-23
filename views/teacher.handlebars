@@ -15,34 +15,93 @@
 
 <div class="card text-center" id="searchCard">
   <div class="card-header">
-    <h3>Add New Dance Class</h3>
+    <h3>Add New Instructor</h3>
   </div>
 
   <div class="card-body">
 {{!Enter teacher name}}
       <label for="teacher">Teacher's name:</label>
       <search name="teacherName" id="addTeacher">
-          <input placeholder="First name">
-          <input placeholder="Last name">
+          <input placeholder="First name" id = "fname">
+          <input placeholder="Last name" id = "lname"> 
       </search><br>
 
-{{!Enter dance type}}
+{{!Enter rating}}
+        <label>Rating:</label>
+        <search name="price" id="newPrice">
+            <input placeholder = "Out of 5" id = "rating">
+        </search><br><br>
+
+{{!Enter location}}
       <label>Location:</label>
       <search name="location" id="newLocation">
-          <input>
+          <input id = "location">
       </search><br>
 
-{{!Enter class name}}
+
+
+{{!Enter class hourly rate}}
         <label>Price per Hour:</label>
         <search name="price" id="newPrice">
-            <input>
+            <input id = "hrate">
         </search><br><br>
 
 {{!NOTE-- redirect to login profile of teacher????}}
     
-<a href="http://localhost:8080/details" class="btn btn-primary">Search</a>
+<a href="http://localhost:8080/index" class="btn btn-primary" id = "#add">Add</a>
   </div>
   <div class="card-footer text-muted">
 
   </div>
 </div>
+
+
+<form action="/api/instructors" method="POST">
+  <div class="form-group">
+    <label>Teacher's name:</label>
+    <input type="text" class="form-control" name="fname" placeholder="First Name">
+  </div>
+  <div class="form-group">
+    <label>Teacher's last name:</label>
+    <input type="text" class="form-control" name="lname" placeholder="Last Name">
+  </div>
+  <div class="form-group">
+    <label>Teacher's rating:</label>
+    <input type="text" class="form-control" name="rating" placeholder="Out of 5">
+  </div>  
+  <div class="form-group">
+    <label>Teacher's location:</label>
+    <input type="text" class="form-control" name="location" placeholder="">
+  </div>  
+  <div class="form-group">
+    <label>Teacher's price per hour:</label>
+    <input type="text" class="form-control" name="hrate" placeholder="">
+  </div>  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+<script type="text/javascript">
+$("#add").on("click", function () {
+  console.log($("#fname").val().trim())
+  
+   $.ajax("/api/instructors/", {
+      type: "POST",
+      data: 
+      {
+        name: $("#fname").val().trim(),
+        lastName: $("#lname").val().trim(),
+        rating: $("#rating").val().trim(),
+        location: $("#location").val().trim(),
+        hourlyRate: $("#hrate").val().trim()
+        }
+    }).then(
+      function() {
+        console.log("instructor saved");
+        location.reload();
+      }
+    );
+  });
+
+</script>
