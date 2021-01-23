@@ -4,9 +4,11 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
+require('dotenv').config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 const path = require("path");
+// console.log(process.env)
 
 // Sets up the Express App
 // =============================================================
@@ -16,7 +18,7 @@ var PORT = process.env.PORT || 8080;
 // Requiring our models for syncing
 var db = require("./models");
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 // app.use(express.static(path.join(__dirname,"public")));
 // Sets up the Express app to handle data parsing
@@ -30,7 +32,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
-// require("./routes/html-routes.js")(app);
+require("./routes/html-routes.js")(app);
 require("./routes/dance-api-routes.js")(app);
 require("./routes/class-api-routes.js")(app);
 require("./routes/instructor-api-routes.js")(app);
