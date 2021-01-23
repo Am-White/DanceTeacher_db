@@ -1,0 +1,58 @@
+<style media="screen">
+body {
+background: rgb(142,232,238);
+background: radial-gradient(circle, rgba(142,232,238,0.9) 30%, rgba(148,187,233,0.8) 100%);
+}
+
+h1 {
+    color: #606060;
+    text-align: center;
+    margin: 30px;
+    font-size: 72px;
+    font-weight: bolder;
+    font-stretch: expanded;
+}
+
+li {
+  font-size:20px;
+}
+
+h2 {
+  color:#606060;
+}
+
+
+</style>
+
+<h1>Let's Dance Together</h1>
+
+
+<div id="center">
+  <div id="Dances">
+    <h2> Offered Dances:</h2>
+
+
+    <ul id = "danceList">
+
+      {{#each dances}}
+
+      <li>
+        Dance Style: {{this.danceTitle}}
+        <img src="/img/{{danceTitle}}.jpg" alt={{danceTitle}} width="400" height="250"/>
+
+
+      </li>
+
+
+     
+        {{/each}}
+    </ul>
+
+
+  </div>
+</div>
+
+
+
+
+

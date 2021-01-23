@@ -37,20 +37,51 @@ module.exports = function(app) {
         instructorID: idParams[1]
       }
     }).then(function(results) {
-      // console.log(results);
-      // res.json(results);
       console.log(results.dataValues.Dance.dataValues.danceTitle);
       console.log(results.dataValues.Instructor.dataValues.name + " " + results.dataValues.Instructor.dataValues.lastName)
       var selectedDanceName = results.dataValues.Dance.dataValues.danceTitle;
       var selectedInstructorName = results.dataValues.Instructor.dataValues.name;
       var selectedInstructorLastName = results.dataValues.Instructor.dataValues.lastName;
-      res.render("details", {name: selectedDanceName, instrName:selectedInstructorName, instLastName: selectedInstructorLastName});
+      var selectedInstructorRating = results.dataValues.Instructor.dataValues.rating;
+      var selectedInstructorLocation = results.dataValues.Instructor.dataValues.location;
+      var selectedInstructorRate = results.dataValues.Instructor.dataValues.hourlyRate;
+      res.render("details", {name: selectedDanceName, instrName:selectedInstructorName, instLastName: selectedInstructorLastName,
+      rating: selectedInstructorRating, location: selectedInstructorLocation, hourlyRate: selectedInstructorRate});
     });
   });
 
+  app.post("/api/classes/search", function(req, res) {
+    console.log(req.body)
+    console.log(Object.values(req.params))
+    idParams = Object.values(req.params)
+    var filters = {};
+    // think about adding the empty string constraint
+    if(req.body.rating!=undefined){
+      filters.rating= req.body.rating
+    }
+
+    console.log(filters)
+
+    db.Class.findAll({
+      include: 
+        [{model: db.Dance, as: "Dance"} , {model: db.Instructor, as: "Instructor", 
+      where: filters}],
+    }).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  app.get("/classes/search", function(req, res) {
+      res.render("search");
+    });
+
 
   app.post("/api/classes", function(req, res) {
-    db.Class.create(req.body).then(function(results) {
+    db.Class.create({
+      classTitle: req.body.classTitle,
+      danceID: req.body.danceID,
+      instructorID: req.body.instructorID
+    }).then(function(results) {
       res.json(results);
     });
   });
