@@ -23,6 +23,7 @@ module.exports = function(app) {
   //   res.sendFile(path.join(__dirname, "../public/author-manager.html"));
   // });
 
+
   //Amethyst's temporary Search handlebars
   app.get("/search", function(req, res) {
     res.render("search");
@@ -48,4 +49,7 @@ module.exports = function(app) {
     res.render("us");
   });
 
+  app.get("/teacher", function(req, res) {
+    res.render("teacher");
+  });
 };

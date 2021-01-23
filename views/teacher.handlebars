@@ -21,24 +21,20 @@
   <div class="card-body">
 {{!Enter teacher name}}
       <label for="teacher">Teacher's name:</label>
-      <select name="teacherName" id="addTeacher">
-
-        {{#each instructor}}
-          <option>{{this.name}} , {{this.lastName}}</option>
-        {{/each}}
-      </select><br>
+      <search name="teacherName" id="addTeacher">
+          <input placeholder="First name">
+          <input placeholder="Last name">
+      </search><br>
 
 {{!Enter dance type}}
-      <label>Dance type:</label>
-      <select name="dance" id="newType">
-          {{#each dances}}
-            <option>{{this.danceTitle}}</option>
-          {{/each}}
-      </select><br>
+      <label>Location:</label>
+      <search name="location" id="newLocation">
+          <input>
+      </search><br>
 
 {{!Enter class name}}
-        <label>Name of class:</label>
-        <search name="title" id="newTitle">
+        <label>Price per Hour:</label>
+        <search name="price" id="newPrice">
             <input>
         </search><br><br>
 
