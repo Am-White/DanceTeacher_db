@@ -3,9 +3,6 @@ var db = require("../models");
 module.exports = function(app) {
   app.get("/api/dances", function(req, res) {
     db.Dance.findAll({
-      // include: [{
-      //   model: db.Instructor
-      // }]
     }).then(function(results) {
       res.json(results);
       // res.render("index", results);
@@ -24,14 +21,16 @@ module.exports = function(app) {
             dances: danceArray
           };
         console.log(hbsObject);
-        res.render("index", hbsObject); 
+        res.render("dances", hbsObject); 
 
     });
   });
 
 
   app.post("/api/dances", function(req, res) {
-    db.Dance.create(req.body).then(function(results) {
+    db.Dance.create({
+      danceTitle: req.body.danceTitle
+    }).then(function(results) {
       res.json(results);
     });
   });
