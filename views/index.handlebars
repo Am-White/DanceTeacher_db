@@ -44,7 +44,8 @@ button {
 
       <p>
         class name: {{this.classTitle}}, dance id: {{this.danceID}}, instructor ID: {{this.instructorID}}
-        <button data-classid="{{this.id}}" class="favorite">Details</button>
+        {{!-- <button data-classid="{{this.id}}" class="favorite">Details</button> --}}
+        <a id="openBtn" href="http://localhost:8080/classes/{{danceID}}/{{instructorID}}" class="btn btn-outline-info">Details</a>
 
 
       </p>
@@ -59,10 +60,4 @@ button {
 </div>
 
 
-<div id = "addAclass">
-<h2 id = "addH2">Add The Class</h2>
-  <textarea id = "cl" type="text" name="className"></textarea>
-  <button id = "add" type="button">Submit </button>
-<p id = "add_b_p" >Enter a class name</p>
-</div>
 

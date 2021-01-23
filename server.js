@@ -8,6 +8,7 @@ require('dotenv').config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 const path = require("path");
+var bodyParser = require('body-parser')
 // console.log(process.env)
 
 // Sets up the Express App
@@ -23,6 +24,7 @@ app.use(express.static(__dirname + "/public"));
 // app.use(express.static(path.join(__dirname,"public")));
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 

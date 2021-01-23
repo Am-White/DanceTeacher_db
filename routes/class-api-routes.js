@@ -45,7 +45,7 @@ module.exports = function(app) {
       var selectedInstructorRating = results.dataValues.Instructor.dataValues.rating;
       var selectedInstructorLocation = results.dataValues.Instructor.dataValues.location;
       var selectedInstructorRate = results.dataValues.Instructor.dataValues.hourlyRate;
-      res.render("details", {name: selectedDanceName, instrName:selectedInstructorName, instLastName: selectedInstructorLastName,
+      res.render("v-details", {name: selectedDanceName, instrName:selectedInstructorName, instLastName: selectedInstructorLastName,
       rating: selectedInstructorRating, location: selectedInstructorLocation, hourlyRate: selectedInstructorRate});
     });
   });
