@@ -1,0 +1,48 @@
+<style>
+
+     body {
+        background-image: url(dancer-in-studio-wondows.jpg);
+        background-size: cover;
+    }
+  #searchCard {
+    margin:auto;
+    margin-top: 100px;
+    max-width: 500px;
+  }
+
+</style>
+
+
+<div class="card text-center" id="searchCard">
+  <div class="card-header">
+    <h3>Add New Dance Class</h3>
+  </div>
+
+  <div class="card-body">
+{{!Enter teacher name}}
+      <label for="teacher">Teacher's name:</label>
+      <search name="teacherName" id="addTeacher">
+          <input placeholder="First name">
+          <input placeholder="Last name">
+      </search><br>
+
+{{!Enter dance type}}
+      <label>Location:</label>
+      <search name="location" id="newLocation">
+          <input>
+      </search><br>
+
+{{!Enter class name}}
+        <label>Price per Hour:</label>
+        <search name="price" id="newPrice">
+            <input>
+        </search><br><br>
+
+{{!NOTE-- redirect to login profile of teacher????}}
+    
+<a href="http://localhost:8080/details" class="btn btn-primary">Search</a>
+  </div>
+  <div class="card-footer text-muted">
+
+  </div>
+</div>
