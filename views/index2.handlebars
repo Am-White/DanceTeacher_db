@@ -1,7 +1,47 @@
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Dance Class Search</h1>
+<style media="screen">
 
+    body {
+        background-image: url(dancer-in-studio-wondows.jpg);
+        background-size: cover;
+    }
+    #opening {
+        max-width: 650px;
+        margin: auto;
+        text-align: center;
+        padding-top: 200px;
+    }
+
+    .card {
+        opacity: 80%;
+    }
+
+    #openBtn {
+        opacity: 100%;
+    }
+
+</style>
+
+
+<div id="opening" class="row" data-wow-duration="0.75s" data-wow-delay=".5s">
+  <div id="openCard" class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Search Dance Classes</h5>
+        <p class="card-text"> ... </p>
+        <a id="openBtn" href="http://localhost:8080/search" class="btn btn-outline-info">Student</a>
+      </div>
+    </div>
+  </div>
+  <div id="openCard" class="col-sm-6" data-wow-duration="0.75s" data-wow-delay=".5s">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Add a Class</h5>
+        <p class="card-text"> ... </p>
+        <a id="openBtn" href="http://localhost:8080/add" class="btn btn-outline-info">Instructor</a>
+      </div>
+    </div>
   </div>
 </div>
+
+
 

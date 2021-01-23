@@ -40,4 +40,12 @@ module.exports = function(app) {
     res.render("add");
   });
 
+  app.get("/index", function(req, res) {
+    res.render("index2");
+  });
+
+  app.get("/us", function(req, res) {
+    res.render("us");
+  });
+
 };
