@@ -22,20 +22,20 @@
 {{!Enter teacher name}}
       <label for="teacher">Teacher's name:</label>
       <search name="teacherName" id="addTeacher">
-          <input placeholder="First name" id = "fname">
-          <input placeholder="Last name" id = "lname"> 
+          <textarea id = "fname" type="text" name="instructor_fname" placeholder="First name"></textarea>
+          <textarea id = "lname" type="text" name="instructor_lname" placeholder="Last name"></textarea>
       </search><br>
 
 {{!Enter rating}}
         <label>Rating:</label>
         <search name="price" id="newPrice">
-            <input placeholder = "Out of 5" id = "rating">
+            <textarea id = "rating" type="text" name="rating" placeholder = "Out of 5"></textarea>
         </search><br><br>
 
 {{!Enter location}}
       <label>Location:</label>
       <search name="location" id="newLocation">
-          <input id = "location">
+          <textarea id = "location" type="text" name="location"></textarea>
       </search><br>
 
 
@@ -43,12 +43,12 @@
 {{!Enter class hourly rate}}
         <label>Price per Hour:</label>
         <search name="price" id="newPrice">
-            <input id = "hrate">
+            <textarea id = "hrate" type="text" name="instructor_name"></textarea>
         </search><br><br>
 
-{{!NOTE-- redirect to login profile of teacher????}}
-    
-<a href="http://localhost:8080/index" class="btn btn-primary" id = "#add">Add</a>
+
+<button id = "add" type="button">Add </button>
+
   </div>
   <div class="card-footer text-muted">
 
@@ -56,7 +56,34 @@
 </div>
 
 
-<form action="/api/instructors" method="POST">
+
+
+<script type="text/javascript">
+$("#add").on("click", function () {
+  console.log($("#fname").val().trim())
+  
+   $.ajax("/api/instructors/", {
+      type: "POST",
+      data: 
+      {
+        name: $("#fname").val().trim(),
+        lastName: $("#lname").val().trim(),
+        rating: $("#rating").val().trim(),
+        location: $("#location").val().trim(),
+        hourlyRate: $("#hrate").val().trim()
+        }
+    }).then(
+      function() {
+        console.log("instructor saved");
+        location.href = "http://localhost:8080/index"
+      }
+    );
+  });
+
+</script>
+
+
+{{!-- <form action="/api/instructors" method="POST">
   <div class="form-group">
     <label>Teacher's name:</label>
     <input type="text" class="form-control" name="fname" placeholder="First Name">
@@ -78,30 +105,4 @@
     <input type="text" class="form-control" name="hrate" placeholder="">
   </div>  
   <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-
-
-<script type="text/javascript">
-$("#add").on("click", function () {
-  console.log($("#fname").val().trim())
-  
-   $.ajax("/api/instructors/", {
-      type: "POST",
-      data: 
-      {
-        name: $("#fname").val().trim(),
-        lastName: $("#lname").val().trim(),
-        rating: $("#rating").val().trim(),
-        location: $("#location").val().trim(),
-        hourlyRate: $("#hrate").val().trim()
-        }
-    }).then(
-      function() {
-        console.log("instructor saved");
-        location.reload();
-      }
-    );
-  });
-
-</script>
+</form> --}}
