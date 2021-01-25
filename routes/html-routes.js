@@ -26,7 +26,7 @@ module.exports = function(app) {
 
   //Amethyst's temporary Search handlebars
   app.get("/search", function(req, res) {
-    res.render("search");
+    res.render("../views/search.handlebars");
   });
 
   app.get("/details", function(req,res) {
