@@ -19,34 +19,60 @@
   </div>
 
   <div class="card-body">
-{{!Enter teacher name}}
-      <label for="teacher">Teacher's name:</label>
-      <select name="teacherName" id="addTeacher">
-
-        {{#each instructor}}
-          <option>{{this.name}} , {{this.lastName}}</option>
-        {{/each}}
-      </select><br>
-
-{{!Enter dance type}}
-      <label>Dance type:</label>
-      <select name="dance" id="newType">
-          {{#each dances}}
-            <option>{{this.danceTitle}}</option>
-          {{/each}}
-      </select><br>
 
 {{!Enter class name}}
         <label>Name of class:</label>
         <search name="title" id="newTitle">
-            <input>
+            <textarea id = "className" type="text" name="className"></textarea>
         </search><br><br>
 
-{{!NOTE-- redirect to login profile of teacher????}}
-    
-<a href="http://localhost:8080/details" class="btn btn-primary">Search</a>
+{{!Enter teacher name}}
+      <label for="teacher">Instructor's name:</label>
+      <select name="teacherName" id="addTeacher">
+        <option value="">--Please choose an instructor--</option>
+        {{#each instructors}}
+          <option value= {{this.id}}>{{this.name}} {{this.lastName}}</option>
+        {{/each}}
+      </select><br>
+
+{{!Enter dance type}}
+      <label>Dance style:</label>
+      <select name="dance" id="addDance">
+          <option value="">--Please choose a dance style--</option>
+          {{#each dances}}
+            <option value= {{this.id}}>{{this.danceTitle}}</option>
+          {{/each}}
+      </select><br>
+
+
+<button id = "add" type="button">Add </button>
+
+{{!-- <a href="http://localhost:8080/index" class="btn btn-primary">Add</a> --}}
   </div>
   <div class="card-footer text-muted">
 
   </div>
 </div>
+
+
+<script type="text/javascript">
+$("#add").on("click", function () {
+  console.log($("#className").val().trim())
+  
+   $.ajax("/api/classes/", {
+      type: "POST",
+      data: 
+      {
+        classTitle: $("#className").val().trim(),
+        danceID: $("#addDance").val().trim(),
+        instructorID: $("#addTeacher").val().trim()
+        }
+    }).then(
+      function() {
+        console.log("class saved");
+        location.href = "http://localhost:8080/index"
+      }
+    );
+  });
+
+</script>

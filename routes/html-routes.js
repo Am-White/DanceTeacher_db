@@ -76,9 +76,30 @@ module.exports = function(app) {
     res.render("search2");
   });
 
-  app.get("/add", function(req,res) {
-    res.render("add");
+
+  app.get("/add", function(req, res) {
+    var danceArray = [];
+    var instrArray = [];
+    db.Dance.findAll({
+    }).then(function(results) {
+        results.forEach(element =>
+          danceArray.push(element.dataValues));
+        console.log(danceArray)
+        db.Instructor.findAll({
+        }).then(function(data) {
+          data.forEach(element =>
+            instrArray.push(element.dataValues));
+          console.log(instrArray);
+          var hbsObject = {
+            dances: danceArray,
+            instructors: instrArray
+          }
+          console.log(hbsObject);
+          res.render("add", hbsObject);
+        })
+    });
   });
+
 
   app.get("/index", function(req, res) {
     res.render("index2");
