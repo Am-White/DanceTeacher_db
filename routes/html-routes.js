@@ -131,4 +131,13 @@ module.exports = function(app) {
   app.get("/teacher", function(req, res) {
     res.render("teacher");
   });
+
+  app.get("/register", function(req, res) {
+    res.render("register");
+  });
+
+  app.get("/login", function(req, res) {
+    res.render("login");
+  });
+
 };
