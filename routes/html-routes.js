@@ -72,11 +72,7 @@ module.exports = function(app) {
     res.render("404");
   });
 
-  app.get("/search2", function(req,res) {
-    res.render("search2");
-  });
-
-
+/* New Class (Class name, type, teacher) */
   app.get("/add", function(req, res) {
     var danceArray = [];
     var instrArray = [];
@@ -100,6 +96,29 @@ module.exports = function(app) {
     });
   });
 
+  /* Search Classes from drop down menu*/
+  app.get("/search2", function(req, res) {
+    var danceArray = [];
+    var instrArray = [];
+    db.Dance.findAll({
+    }).then(function(results) {
+        results.forEach(element =>
+          danceArray.push(element.dataValues));
+        console.log(danceArray)
+        db.Instructor.findAll({
+        }).then(function(data) {
+          data.forEach(element =>
+            instrArray.push(element.dataValues));
+          console.log(instrArray);
+          var hbsObject = {
+            dances: danceArray,
+            instructors: instrArray
+          }
+          console.log(hbsObject);
+          res.render("search2", hbsObject);
+        })
+    });
+  });
 
   app.get("/index", function(req, res) {
     res.render("index2");
