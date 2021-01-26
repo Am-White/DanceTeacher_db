@@ -1,16 +1,51 @@
-<h1>hello world</h1>
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4 text-center"> Classes </h1>
+<style>
+
+  body {
+    background-image: url("https://images.pexels.com/photos/2702960/pexels-photo-2702960.jpeg?cs=srgb&dl=pexels-fabio-marciano-2702960.jpg&fm=jpg");
+    background-size: cover;
+
+    
+    }
+
+  #searchCard {
+    margin:auto;
+    margin-top: 100px;
+    max-width: 500px;
+    font-family: 'Open Sans', sans-serif;
+
+    }
+
+    #searchHeader {
+        font-family: 'Cinzel Decorative', cursive; 
+        color: white;
+        margin-top: 200px;
+    }
+
+</style>
+
+<h3 id="searchHeader" class="display-4 text-center">Class Search Results</h3>
+
+<div class="card" id="searchCard">
+    
+    <div class="col-6 align-self-center">
+
+            <ul class="list-group list-group-flush">
+
+                <li class="list-group-item">
+            
+                    {{#each classTitle}}
+
+                        {{>instructor/details_button}}
+
+                    {{/each}}
+
+                </li>
+            </ul>
+    
     </div>
 </div>
 
-<ul>
 
-    {{#each classTitle}}
 
-        {{>instructor/details_button}}
 
-    {{/each}}
 
-</ul>
