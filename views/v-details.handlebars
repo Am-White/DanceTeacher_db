@@ -1,42 +1,75 @@
 
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h3 class="display-4 text-center">Details</h3>
+<style>
+
+    body {
+        background-image: url("https://images.pexels.com/photos/4600623/pexels-photo-4600623.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260") no-repeat center center fixed;
+        background-size: cover;
+
+    }
+
+  #searchCard {
+    margin:auto;
+    margin-top: 100px;
+    max-width: 500px;
+    font-family: 'Open Sans', sans-serif;
+
+    }
+
+    #searchHeader {
+        font-family: 'Cinzel Decorative', cursive; 
+        color: white;
+        margin-top: 200px;
+    }
+
+    #danceImg {
+        border-style: groove; 
+        box-shadow: 5px 6px 36px 2px rgb(85, 85, 84);
+    }
+
+
+</style>
+
+
+<h3 id="searchHeader" class="display-4 text-center">Class Details</h3>
+ 
+
+<div class="row">
+
+    <div class="col-6">
+
+        <div id = "searchCard" class="card">
+
+            <img id="danceImg" src="/img/{{name}}.jpg" alt={{name}} width="400" height="250" class="card-img-top">
+
+            <div class="card-body">
+                <h5 class="card-title">{{this.classTitle}}</h5>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Teacher Name: {{this.instrName}}{{this.instrLastName}}</li>
+                <li class="list-group-item">Dance Style: {{this.name}}</li>
+                <li class="list-group-item">Location: {{this.location}}</li>
+                <li class="list-group-item">Hourly Rate: {{this.hourlyRate}}</li>
+                <li class="list-group-item">Rating: {{this.rating}}</li>
+            </ul>
+
+            <div class="card-body">
+                <a href="http://localhost:8080/results" class="btn btn-primary">Back to results</a>
+            </div>
+
+        </div>
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/iXOuzMZ8TtU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="card-text">This could be you!</p>
+                </div>
+            </div>
+        </div>
+
     </div>
+
 </div>
 
 
-<div class="classDetails">
-    <table class="table table-secondary table-striped">
-        <tbody>
-            <tr id="form-row">
-                <td scope="row" class="border-bottom">Teacher Name</td>
-                <td id = "teacherName" class="border-bottom">{{this.instrName}} {{instLastName}}</td>
-            </tr>
-
-            <tr id="form-row">
-                <td scope="row" class="border-bottom">Dance Style</td>
-                <td id="danceStyle" class="border-bottom">{{this.name}}</td>
-            </tr>
-
-            <tr id="form-row">
-                <td scope="row" class="border-bottom">Location</td>
-                <td id ="location" class="border-bottom">{{this.location}}</td>
-            </tr>
-
-            <tr id="form-row">
-                <td scope="row" class="border-bottom">Hourly Rate</td>
-                <td id="hourlyRate" class="border-bottom">{{this.hourlyRate}}</td>
-            </tr>
-
-            <tr id="form-row">
-                <td scope="row" class="border-bottom">Rating</td>
-                <td id="rating" class="border-bottom">{{this.rating}}</td>
-            </tr>
-
-        <button class="save"> Save </button>
-
-        </tbody>
-    </table>
-    <img src="/img/{{name}}.jpg" alt={{name}} width="400" height="250"/>
-</div>

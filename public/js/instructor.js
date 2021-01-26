@@ -16,14 +16,15 @@ $(document).ready(function() {
         var rating = $("#rating");
 
         var classDetails = {
-            teacherName: this.name + this.lastName,
+            teacherName: this.instrName + this.instrLastName,
             location: this.location,
             hourlyRate: this.hourlyRate,
             rating: this.rating
         };
 
         var classType = {
-            danceStyle = this.danceStyle
+            danceStyle = this.danceStyle,
+            classTitle = this.classTitle
         };
 
         getInstructorDetails(id);
