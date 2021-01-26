@@ -24,17 +24,17 @@
       <label for="teacher">Teacher's name:</label>
       <select name="teacherName" id="searchTeacher">
 
-    {{#each instructor}}
-        <option>{{this.name}} , {{this.lastName}}</option>
+    {{#each instructors}}
+        <option value= {{this.id}}>{{this.name}} , {{this.lastName}}</option>
     {{/each}}
       </select><br>
 
 {{!Select by dance type}}
-      <label>Dance type:</label>
-      <select name="dance" id="searchType">
+      <label>Dance style:</label>
+      <select name="dance" id="searchStyle">
       
     {{#each dances}}
-      <option>{{this.danceTitle}}</option>
+      <option value={{this.id}}>{{this.danceTitle}}</option>
     {{/each}}
       </select><br><br>
 
@@ -44,8 +44,8 @@
       <label>Location:</label>
       <select name="location" id="searchLocation">
 
-    {{#each instructor}}
-      <option>{{this.location}}</option>
+    {{#each instructors}}
+      <option value={{this.id}}>{{this.location}}</option>
     {{/each}}
       </select><br>
 
@@ -53,8 +53,8 @@
     <label>Price per Hour:</label>
     <select name="price" id="searchPrice">
     
-    {{#each instructor}}
-      <option>{{this.hourlyRate}}</option>
+    {{#each instructors}}
+      <option value={{this.id}}>{{this.hourlyRate}}</option>
     {{/each}}
       </select><br>
 
@@ -62,15 +62,14 @@
     <label>Rating:</label>
     <select name="rating" id="searchRating" placeholder="Out of 5 stars">
       
-    {{#each instructor}}
-      <option>{{this.rating}} {{!<i class="bi bi-star"></i>}} </option>
+    {{#each instructors}}
+      <option value={{this.id}}>{{this.rating}} {{!<i class="bi bi-star"></i>}} </option>
     {{/each}}
       </select><br><br>
 
-    <a href="http://localhost:8080/details" class="btn btn-primary">Search</a>
+    <a id="search" href="" class="btn btn-primary">Search</a>
   </div>
   <div class="card-footer text-muted">
 
   </div>
 </div>
-
