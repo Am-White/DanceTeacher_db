@@ -1,39 +1,78 @@
 <style>
- body {
-        background-image: url(dancer-in-studio-wondows.jpg);
-        background-size: cover;
-    }
-
-    #profileImg {
+        #profileImg {
         object-fit: cover;
-        max-height: 200px;
-        max-width: 200px;
+        height: 200px;
+        width: 200px;
         border-radius: 50%;
     }
 
     #profileCard {
         align-items: center;
+        margin: 20px;
+        margin-top: 130px;
+        display: flex;
+        min-width: 250px;
+        padding: 10px;
     }
 
 </style>
 
 
-<div id="profileCards">
+<div id="profileCards" class="container">
+    <div class="row">
 
     {{!Card 1}}
-<div id="profileCard" class="card" style="width: 18rem;">
-        <img id="profileImg" src="" class="card-img-top" alt="...">
+<div id="profileCard" class="card col-sm" style="width: 18rem;">
+        <img id="profileImg" src="/img/kat-profile.png" class="card-img-top" alt="Photo of Kat">
     <div class="card-body">
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
+
+      <div class="card-body">
+    <a href="https://www.linkedin.com/in/kgomozova/" class="card-link">Linkedin</a>
+    <a href="https://github.com/kgo87" class="card-link">GitHub</a>
+  </div>
 </div>
 
     {{!Card 2}}
-<div id="profileCard" class="card" style="width: 18rem;">
-        <img id="profileImg" src="" class="card-img-top" alt="...">
+<div id="profileCard" class="card col-sm" style="width: 18rem;">
+        <img id="profileImg" src="/img/martin-profile.jpg" class="card-img-top" alt="Photo of Martin">
     <div class="card-body">
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
+
+      <div class="card-body">
+    <a href="#" class="card-link">Linkedin</a>
+    <a href="#" class="card-link">GitHub</a>
+  </div>
+</div>
+
+    {{!Card 3}}
+<div id="profileCard" class="card col-sm" style="width: 18rem;">
+        <img id="profileImg" src="/img/ame-profile.jpeg" class="card-img-top" alt="Photo of Amethyst">
+    <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+
+      <div class="card-body">
+    <a href="https://www.linkedin.com/in/amethyst-white-1942761b7/" class="card-link">Linkedin</a>
+    <a href="https://github.com/Am-White" class="card-link">GitHub</a>
+  </div>
+</div>
+
+    {{!Card 4}}
+<div id="profileCard" class="card col-sm" style="width: 18rem;">
+        <img id="profileImg" src="/img/vanessa-profile.jpg" class="card-img-top" alt="Photo of Vanessa">
+    <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+
+      <div class="card-body">
+    <a href="#" class="card-link">Linkedin</a>
+    <a href="https://github.com/cwf1984" class="card-link">GitHub</a>
+  </div>
+</div>
+
 </div>
 
 </div>
