@@ -9,9 +9,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <link rel="stylesheet" href="/css/style.css"/>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700;900&display=swap" rel="stylesheet">
-  <title>Dance</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Open+Sans&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  
+  <title>Dance Studio</title>
 </head>
 
 
@@ -20,46 +22,83 @@
   {{!Transfer to css when linked}}
   <style>
         #header {
-        color:rgb(8, 8, 8);
+        color:rgb(212, 211, 211);
         font-weight:400;
         font-size: 50px;
+        font-family: 'Cinzel Decorative', cursive;
     }
+        #jumbo-header {
+        background-color: rgb(157, 157, 158);
+        opacity: 60%;
+        }
+
+        .nav {
+          flex-wrap: nowrap;
+        }
+
+        li a {
+          color:rgb(10, 10, 10);
+        }
+
+        li a:hover {
+          color:rgb(231, 233, 233);
+        }
+
+        #homeBtn {
+          background-color: teal;
+        }
+
+        #homeBtn:hover {
+          background-color: aquamarine;
+          color: black;
+        }
+        #footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          color: rgb(156, 156, 156);
+          text-align: center;
+        }
+        #heartFt:hover {
+          color: red;
+        }
+
   </style>
 
   {{!Header}}
-<div class="jumbotron-fluid">
+<div id="jumbo-header" class="jumbotron-fluid">
   <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container-fluid">
       <a id="header" class="navbar-brand">Dance Class Search</a>
     </div>
 
 {{!Nav links}}
-<ul class="nav justify-content-end">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="http://localhost:8080/index">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Saved</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="http://localhost:8080/us">The Team</a>
-  </li>
-    <li class="nav-item">
-    <a class="nav-link" href="http://localhost:8080/register">Register</a>
-  </li>  <li class="nav-item">
-    <a class="nav-link" href="http://localhost:8080/login">Login</a>
-  </li>
 
-
-  {{!Delete this and re position links}}
+  <ul class="nav nav-pills navbar-dark">
   <li class="nav-item">
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">?</a>
+    <a id="homeBtn" class="nav-link active" aria-current="page" href="http://localhost:8080/index">Home</a>
   </li>
-</ul>
-  </nav>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Account</a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="http://localhost:8080/login">Login</a></li>
+      <li><a class="dropdown-item" href="http://localhost:8080/register">Sign-up</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Your saved classes</a></li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="http://localhost:8080/us">Contact Us</a>
+  </li>
+  </ul>
 </div>
 
   {{{ body }}}
 </body>
+
+<div id="footer">
+  <p>Made with <i id="heartFt"class="bi bi-suit-heart-fill"></i> </p>
+</div>
 
 </html>

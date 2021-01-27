@@ -1,9 +1,10 @@
 <style>
 
-   body {
-        background-image: url(dancer-in-studio-wondows.jpg);
-        background-size: cover;
-    }
+  #searchCard {
+    margin:auto;
+    margin-top: 100px;
+    max-width: 500px;
+  }
       #searchCard {
       margin:auto;
       margin-top: 100px;
@@ -38,6 +39,17 @@
       color: white;
       width: 75px;
     }
+
+  #searchBtn {
+    background-color: teal;
+    border-color: teal;
+  }
+
+  #searchBtn:hover {
+    background-color:rgb(4, 182, 182);
+    color: rgb(247, 245, 245);
+    border-color: rgb(4, 182, 182);
+  }
 
 </style>
 
@@ -98,9 +110,7 @@
     {{/each}}
       </select><br><br>
 
-  <div class="d-flex justify-content-center">
-    <button id = "add" class="btn" type="button"> Search </button>
-  </div>
+    <a id="searchBtn" href="" class="btn btn-primary">Search</a>
 
   </div>
 

@@ -1,7 +1,6 @@
 body {
-    background: rgb(224,233,74);
-    background: radial-gradient(circle, rgba(224,233,74,1) 15%, rgba(249,230,153,0.9206057422969187) 49%, rgba(230,216,196,1) 91%);
-
+    background-image: url(/img/dancer-in-studio-wondows.jpg);
+    background-size: cover;
 }
 
 h1 {
