@@ -35,9 +35,33 @@
           flex-wrap: nowrap;
         }
 
-        
+        li a {
+          color:rgb(10, 10, 10);
+        }
 
+        li a:hover {
+          color:rgb(231, 233, 233);
+        }
 
+        #homeBtn {
+          background-color: teal;
+        }
+
+        #homeBtn:hover {
+          background-color: aquamarine;
+          color: black;
+        }
+        #footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          color: rgb(156, 156, 156);
+          text-align: center;
+        }
+        #heartFt:hover {
+          color: red;
+        }
 
   </style>
 
@@ -52,7 +76,7 @@
 
   <ul class="nav nav-pills navbar-dark">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="http://localhost:8080/index">Home</a>
+    <a id="homeBtn" class="nav-link active" aria-current="page" href="http://localhost:8080/index">Home</a>
   </li>
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Account</a>
@@ -71,5 +95,9 @@
 
   {{{ body }}}
 </body>
+
+<div id="footer">
+  <p>Made with <i id="heartFt"class="bi bi-suit-heart-fill"></i> </p>
+</div>
 
 </html>
