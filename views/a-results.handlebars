@@ -1,24 +1,37 @@
 <style>
 
-  body {
-    background-image: url("https://images.pexels.com/photos/2702960/pexels-photo-2702960.jpeg?cs=srgb&dl=pexels-fabio-marciano-2702960.jpg&fm=jpg");
-    background-size: cover;
-
-    
-    }
-
   #searchCard {
-    margin:auto;
-    margin-top: 100px;
-    max-width: 500px;
-    font-family: 'Open Sans', sans-serif;
-
+      margin:auto;
+      margin-top: 100px;
+      max-width: 550px;
+      opacity: 90%;
+      box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+      backdrop-filter: blur(20px);
+      background-color: rgba(245, 244, 244, 0.863);
+      border-style: outset;
+      border-color:rgba(37, 35, 35, 0.733);
+      border-width: 3px;
     }
 
     #searchHeader {
-        font-family: 'Cinzel Decorative', cursive; 
-        color: white;
-        margin-top: 200px;
+      font-family: 'Cinzel Decorative', cursive; 
+      font-weight: 700;
+      color: white;
+      
+    }
+
+    #cardBody {
+      margin:auto;
+      max-width: 550px;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    #add {
+      background-color:rgb(4, 4, 78);
+      color: white;
+      width: 75px;
     }
 
 </style>
@@ -27,7 +40,7 @@
 
 <div class="card" id="searchCard">
     
-    <div class="col-6 align-self-center">
+    <div class="col-6 align-self-center" id="cardBody">
 
             <ul class="list-group list-group-flush">
 
