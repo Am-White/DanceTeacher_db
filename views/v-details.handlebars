@@ -1,63 +1,89 @@
 
 <style>
+
     body {
-        background-image: url("https://images.pexels.com/photos/4600623/pexels-photo-4600623.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260") no-repeat center center fixed;
-        background-size: cover;
+      background-image: url(dancer-in-studio-wondows.jpg);
+      background-size: cover;
     }
-  #searchCard {
-    margin:auto;
-    margin-top: 100px;
-    max-width: 500px;
-    font-family: 'Open Sans', sans-serif;
+
+    #searchCard {
+        margin:auto;
+        margin-top: 100px;
+        max-width: 550px;
+        opacity: 90%;
+        box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+        backdrop-filter: blur(20px);
+        background-color: rgba(245, 244, 244, 0.863);
+        border-style: outset;
+        border-color:rgba(37, 35, 35, 0.733);
+        border-width: 3px;
     }
+
     #searchHeader {
         font-family: 'Cinzel Decorative', cursive; 
         color: white;
         margin-top: 200px;
     }
-    #danceImg {
-        border-style: groove; 
-        box-shadow: 5px 6px 36px 2px rgb(85, 85, 84);
+
+    #searchHeader {
+      font-family: 'Cinzel Decorative', cursive; 
+      font-weight: 700;
+      color: white;
+      background-color:rgb(4, 4, 78);
+      padding-top: 20px;
     }
+
+    #cardBody {
+      margin:auto;
+      max-width: 550px;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
 </style>
 
 
 <h3 id="searchHeader" class="display-4 text-center">Class Details</h3>
  
+<div class="container">
 
-<div class="row">
 
-    <div class="col-6">
+    <div class="row">
 
-        <div id = "searchCard" class="card">
+        <div class="col-6">
 
-            <img id="danceImg" src="/img/{{name}}.jpg" alt={{name}} width="400" height="250" class="card-img-top">
+            <div id = "searchCard" class="card">
 
-            <div class="card-body">
-                <h5 class="card-title">{{this.classTitle}}</h5>
+                <img id="danceImg" src="/img/{{name}}.jpg" alt={{name}} width="400" height="250" class="card-img-top">
+
+                <div class="card-body" id="cardBody">
+                    <h5 class="card-title">{{this.classTitle}}</h5>
+                </div>
+
+                <ul class="list-group list-group-flush" id="cardBody">
+                    <li class="list-group-item">Teacher Name: {{this.instrName}}{{this.instrLastName}}</li>
+                    <li class="list-group-item">Dance Style: {{this.name}}</li>
+                    <li class="list-group-item">Location: {{this.location}}</li>
+                    <li class="list-group-item">Hourly Rate: {{this.hourlyRate}}</li>
+                    <li class="list-group-item">Rating: {{this.rating}}</li>
+                </ul>
+
+                <div class="d-flex justify-content-center pt-3">
+                    <a href="http://localhost:8080/results">Back to results</a>
+                </div>
+
             </div>
 
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Teacher Name: {{this.instrName}}{{this.instrLastName}}</li>
-                <li class="list-group-item">Dance Style: {{this.name}}</li>
-                <li class="list-group-item">Location: {{this.location}}</li>
-                <li class="list-group-item">Hourly Rate: {{this.hourlyRate}}</li>
-                <li class="list-group-item">Rating: {{this.rating}}</li>
-            </ul>
-
-            <div class="card-body">
-                <a href="http://localhost:8080/results" class="btn btn-primary">Back to results</a>
-            </div>
-
-        </div>
-
-        <div class="col-4">
+        {{!-- <div class="col-4">
             <div class="card">
                 <div class="card-body">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/iXOuzMZ8TtU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <p class="card-text">This could be you!</p>
                 </div>
             </div>
+        </div> --}}
+
         </div>
 
     </div>

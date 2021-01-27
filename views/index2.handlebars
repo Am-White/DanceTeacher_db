@@ -1,6 +1,6 @@
 <style media="screen">
     #opening {
-        max-width: 650px;
+        max-width: 750px;
         margin: auto;
         text-align: center;
         padding-top: 200px;
@@ -8,43 +8,79 @@
 
     .card {
         opacity: 80%;
+        height: 175px;
     }
 
     #openBtn {
         opacity: 100%;
+        background-color:rgb(4, 4, 78);
+        color: white;
+    }
+
+    .card-title {
+      font-weight: 900;
+    }
+
+    #cardBody {
+      margin:auto;
+      max-width: 500px;
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+    }
+
+    #searchCard {
+      margin:auto;
+      margin-top: 100px;
+      max-width: 550px;
+      opacity: 90%;
+      box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+      backdrop-filter: blur(20px);
+      background-color: rgba(245, 244, 244, 0.863);
+      border-style: outset;
+      border-color:rgba(37, 35, 35, 0.733);
+      border-width: 3px;
     }
 
 </style>
 
 
 <div id="opening" class="row" data-wow-duration="0.75s" data-wow-delay=".5s">
-  <div id="openCard" class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
+
+  <div id="openCard" class="col-sm-4">
+    
+    <div class="card" id="searchCard">
+      <div class="card-body" id="cardBody">
         <h5 class="card-title">Search Dance Classes</h5>
         <p class="card-text"> ... </p>
-        <a id="openBtn" href="http://localhost:8080/search" class="btn btn-outline-info">Student</a>
+        <a id="openBtn" href="http://localhost:8080/search" class="btn">Student</a>
       </div>
     </div>
   </div>
-  <div id="openCard" class="col-sm-6" data-wow-duration="0.75s" data-wow-delay=".5s">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Add a Class</h5>
+
+  <div id="openCard" class="col-sm-4" data-wow-duration="0.75s" data-wow-delay=".5s">
+
+    <div class="card" id="searchCard">
+      <div class="card-body" id="cardBody">
+        <h5 class="card-title">Add a Class</h5><br>
         <p class="card-text"> ... </p>
-        <a id="openBtn" href="http://localhost:8080/add" class="btn btn-outline-info">Instructor</a>
+        <a id="openBtn" href="http://localhost:8080/add" class="btn">Instructor</a>
       </div>
     </div>
+
   </div>
-    <div id="openCard" class="col-sm-6" data-wow-duration="0.75s" data-wow-delay=".5s">
-    <div class="card">
-      <div class="card-body">
+
+  <div id="openCard" class="col-sm-4" data-wow-duration="0.75s" data-wow-delay=".5s">
+
+    <div class="card"id="searchCard">
+      <div class="card-body" id="cardBody">
         <h5 class="card-title">Add an Instructor</h5>
         <p class="card-text"> ... </p>
-        <a id="openBtn" href="http://localhost:8080/teacher" class="btn btn-outline-info">Instructor</a>
+        <a id="openBtn" href="http://localhost:8080/teacher" class="btn">Instructor</a>
       </div>
     </div>
+
   </div>
+
 </div>
 
 
