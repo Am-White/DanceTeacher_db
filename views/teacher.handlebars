@@ -1,58 +1,127 @@
 <style>
 
-     body {
-        background-image: url(dancer-in-studio-wondows.jpg);
-        background-size: cover;
+    body {
+      background-image: url(dancer-in-studio-wondows.jpg);
+      background-size: cover;
     }
-  #searchCard {
-    margin:auto;
-    margin-top: 100px;
-    max-width: 500px;
-  }
+
+    #searchCard {
+      margin:auto;
+      margin-top: 100px;
+      max-width: 550px;
+      opacity: 90%;
+      box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+      backdrop-filter: blur(20px);
+      background-color: rgba(245, 244, 244, 0.863);
+      border-style: outset;
+      border-color:rgba(37, 35, 35, 0.733);
+      border-width: 3px;
+    }
+
+    #searchHeader {
+      font-family: 'Cinzel Decorative', cursive; 
+      font-weight: 700;
+      color: white;
+      background-color:rgb(4, 4, 78);
+      padding-top: 20px;
+    }
+
+    #cardBody {
+      margin:auto;
+      max-width: 550px;
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    #add {
+      background-color:rgb(4, 4, 78);
+      color: white;
+      width: 75px;
+    }
 
 </style>
 
+<div class="container">
 
-<div class="card text-center" id="searchCard">
-  <div class="card-header">
+  <div class="card" id="searchCard">
+  <div id="searchHeader" class="card-header text-center">
     <h3>Add New Instructor</h3>
   </div>
 
-  <div class="card-body">
+  <div class="card-body" id="cardBody">
 {{!Enter teacher name}}
+  <div class="row">
+    <div class="col-4">
       <label for="teacher">Teacher's name:</label>
+    </div>
+
+    {{!inline flex 2 col}}
+    <div class="col-6">
+      
       <search name="teacherName" id="addTeacher">
           <textarea id = "fname" type="text" name="instructor_fname" placeholder="First name"></textarea>
           <textarea id = "lname" type="text" name="instructor_lname" placeholder="Last name"></textarea>
-      </search><br>
+      </search>
+      
+    </div>
+  </div><br>
 
 {{!Enter rating}}
+  <div class="row">
+    <div class="col-4 text-right">
         <label>Rating:</label>
+    </div>
+    <div class="col-6"
         <search name="price" id="newPrice">
             <textarea id = "rating" type="text" name="rating" placeholder = "Out of 5"></textarea>
-        </search><br><br>
+        </search>
+      </div> 
+        </div><br><br>
 
 {{!Enter location}}
+  <div class="row">
+    <div class="col-4">
       <label>Location:</label>
+    </div>
+      <div class="col-6">
       <search name="location" id="newLocation">
           <textarea id = "location" type="text" name="location"></textarea>
-      </search><br>
+      </search>
+      </div> 
+  </div>
+      <br>
 
 
 
 {{!Enter class hourly rate}}
+  <div class="row">
+    <div class="col-4 ">
         <label>Price per Hour:</label>
+      </div> 
+      <div class="col-6">
+        <div class="d-flex justify-content-end">
         <search name="price" id="newPrice">
             <textarea id = "hrate" type="text" name="instructor_name"></textarea>
-        </search><br><br>
+        </search>
+        </div>
+      </div> 
+        
+    </div>      <br><br>
 
+<div class="d-flex justify-content-center">
+  <button id = "add" class="btn" type="button">Add </button>
+</div>
 
-<button id = "add" type="button">Add </button>
 
   </div>
   <div class="card-footer text-muted">
 
   </div>
+
+  </div>
+
+
 </div>
 
 
