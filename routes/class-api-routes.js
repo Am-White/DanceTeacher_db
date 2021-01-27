@@ -51,29 +51,32 @@ module.exports = function(app) {
   });
 
   app.post("/api/classes/search", function(req, res) {
-    console.log(req.body)
     console.log(Object.values(req.params))
     idParams = Object.values(req.params)
     var filters = {};
-    // think about adding the empty string constraint
+
     if(req.body.rating!=undefined){
       filters.rating= req.body.rating
     }
-
+    if(req.body.location!=undefined){
+      filters.location= req.body.location
+    }
     console.log(filters)
-
     db.Class.findAll({
+      where: {danceID: req.body.danceID
+      },
       include: 
-        [{model: db.Dance, as: "Dance"} , {model: db.Instructor, as: "Instructor", 
-      where: filters}],
+        [{model: db.Instructor, as: "Instructor", where: filters}],
     }).then(function(results) {
       res.json(results);
+
     });
   });
 
   app.get("/classes/search", function(req, res) {
       res.render("search");
     });
+  
 
   //vanessa
   app.get("/classes/results", function (req, res) {

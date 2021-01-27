@@ -18,17 +18,22 @@
   </div>
   <div class="card-body">
 
-    <p>Please search a class by:</p>
+    <p>Please search by Instructor:</p>
 
 {{!Select by teacher name}}
       <label for="teacher">Teacher's name:</label>
       <select name="teacherName" id="searchTeacher">
 
     {{#each instructors}}
-        <option value= {{this.id}}>{{this.name}} , {{this.lastName}}</option>
+        <option value= {{this.id}}>{{this.name}} {{this.lastName}}</option>
     {{/each}}
       </select><br>
+    <button id = "addByInstr" type="button">Search </button>
 
+
+   {{!-- <button id = "add" type="button">Search </button> --}}
+   {{!-- <a id="openBtn" href="http://localhost:8080/classes/{{danceID}}/{{instructorID}}" class="btn btn-outline-info">Search</a> --}}
+  <p>|| OR by Style and Location:||</p>
 {{!Select by dance type}}
       <label>Dance style:</label>
       <select name="dance" id="searchStyle">
@@ -38,7 +43,6 @@
     {{/each}}
       </select><br><br>
 
-  <p>|| OR ||</p>
 
 {{!Select by location}}
       <label>Location:</label>
@@ -50,26 +54,64 @@
       </select><br>
 
 {{!Select by price}}
-    <label>Price per Hour:</label>
+    {{!-- <label>Price per Hour:</label>
     <select name="price" id="searchPrice">
     
     {{#each instructors}}
       <option value={{this.id}}>{{this.hourlyRate}}</option>
     {{/each}}
-      </select><br>
+      </select><br> --}}
 
 {{!Select by rating -- commented out star icon}}
-    <label>Rating:</label>
+    {{!-- <label>Rating:</label>
     <select name="rating" id="searchRating" placeholder="Out of 5 stars">
       
     {{#each instructors}}
-      <option value={{this.id}}>{{this.rating}} {{!<i class="bi bi-star"></i>}} </option>
+      <option value={{this.id}}>{{this.rating}} </option>
     {{/each}}
-      </select><br><br>
+      </select><br><br> --}}
 
-    <a id="search" href="" class="btn btn-primary">Search</a>
+    <button id = "add" type="button">Search </button>
+    {{!-- <a id="search" href="" class="btn btn-primary">Search</a> --}}
   </div>
   <div class="card-footer text-muted">
 
   </div>
 </div>
+
+<h3> Searched Class</h3>
+
+<div id = "search_results"></div>
+
+
+<script type="text/javascript">  
+  $("#add").on("click", function () {
+    var instructor = $("#searchTeacher").val().trim()
+    var danceID = $("#searchStyle").val()
+    console.log(danceID)
+    var searchedCriteria = {location: "Redmond", danceID: danceID};
+    $.ajax("/api/classes/search", {
+        method: "POST",
+        data: searchedCriteria
+    }).then(response => {
+        {{!-- return response.json(); --}}
+        console.log(response);
+        console.log(response[0].classTitle)
+        console.log(response[0].Instructor.name + " " + response[0].Instructor.lastName );
+        var clDiv = $("<div class='classes'>");
+        for(var i= 0; i<response.length;i++) {
+          console.log(response[i].classTitle)
+          var a = $("<li>");
+          var p2 = a.text(response[i].classTitle);
+          clDiv.append(p2)
+        }
+        $("#search_results").append(clDiv);
+
+      
+        })
+
+  });
+
+</script>
+
+
