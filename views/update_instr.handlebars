@@ -46,30 +46,18 @@
 
 </style>
 
+{{!-- <h1>Hello</h1> --}}
+
 <div class="container">
 
   <div class="card" id="searchCard">
   <div id="searchHeader" class="card-header text-center">
-    <h3>Add New Instructor</h3>
+    <h3>Update Instructor's Details </h3>
+    <p>Instructor: {{this.name}} {{this.lastName}} </p>
+    <p id= "id">{{this.id}}</p>
   </div>
 
   <div class="card-body" id="cardBody">
-{{!Enter teacher name}}
-  <div class="row">
-    <div class="col-4">
-      <label for="teacher">Teacher's name:</label>
-    </div>
-
-    {{!inline flex 2 col}}
-    <div class="col-6">
-      
-      <search name="teacherName" id="addTeacher">
-          <textarea id = "fname" type="text" name="instructor_fname" placeholder="First name"></textarea>
-          <textarea id = "lname" type="text" name="instructor_lname" placeholder="Last name"></textarea>
-      </search>
-      
-    </div>
-  </div>
 
 {{!Enter rating}}
   <div class="row">
@@ -108,7 +96,7 @@
     </div> <br>
 
 <div class="d-flex justify-content-center">
-  <button id = "add" class="btn" type="button">Add </button>
+  <button id = "add" class="btn" type="button">Update </button>
 </div>
   </div>
   <div class="card-footer text-muted">
@@ -121,21 +109,21 @@
 
 <script type="text/javascript">
 $("#add").on("click", function () {
-  console.log($("#fname").val().trim())
-  
-   $.ajax("/api/instructors/", {
-      type: "POST",
+    var id = $("#id").text();
+    console.log(id)
+    console.log("/api/instructors/" + id);
+
+   $.ajax("/api/instructors/" + id, {
+      type: "PUT",
       data: 
       {
-        name: $("#fname").val().trim(),
-        lastName: $("#lname").val().trim(),
         rating: $("#rating").val().trim(),
         location: $("#location").val().trim(),
         hourlyRate: $("#hrate").val().trim()
         }
     }).then(
       function() {
-        console.log("instructor saved");
+        console.log("instructor details updated");
         location.href = "http://localhost:8080/index"
       }
     );
