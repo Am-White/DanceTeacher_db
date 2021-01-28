@@ -1,5 +1,9 @@
 <style>
-  #searchCard {
+
+  /*add.handlebars*/
+  /* Card styling */
+    #searchCard {
+
     margin:auto;
     margin-top: 100px;
     max-width: 550px;
@@ -7,32 +11,48 @@
     box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
     backdrop-filter: blur(20px);
     background-color: rgba(245, 244, 244, 0.863);
-    border-style: outset;
-    border-color:rgba(37, 35, 35, 0.733);
-    border-width: 3px;
-  }
+    }
 
     #searchHeader {
-      font-family: 'Cinzel Decorative', cursive; 
-      font-weight: 700;
-      color: white;
-      background-color:rgb(4, 4, 78);
-      padding-top: 20px;
+    font-family: 'Cinzel Decorative', cursive; 
+    font-weight: 700;
+    color: rgb(207, 205, 205);
+    background-color:rgb(80, 130, 170);
+    padding-top: 20px;
     }
 
     #cardBody {
     margin:auto;
     max-width: 550px;
+    }
+    /* Select styling */
+    #label {
     font-family: 'Cinzel', serif;
-    font-weight: 900;
+    font-weight: bold;
     font-size: 18px;
     }
-
+    /* bottom of card and link font styling */
+    #addInst {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 13px;
+    }
+    /* Input and option styling */
+    #addTeacher, #addDance, #className {
+    font-family: 'Cinzel Decorative', cursive;
+    width: 300px;
+    }
+    /* Add button and hover styling */
     #add {
-      background-color:rgb(4, 4, 78);
-      color: white;
-      width: 75px;
-      
+    background-color:teal;
+    color: white;
+    width: 75px;
+    font-family: 'Cinzel Decorative', cursive;
+    }
+
+    #add:hover {
+    background-color: rgb(39, 221, 197);
+    color: black;
     }
 
 </style>
@@ -49,7 +69,7 @@
 {{!Enter class name}}
     <div class="row pt-3">
       <div class="col-4">
-        <label>Name of class:</label>
+        <label id="label">Name of class:</label>
       </div>
       <div class="col-8">
         <div class="d-inline-flex align-items-start">
@@ -63,14 +83,14 @@
 {{!Enter teacher name}}
   <div class="row pt-4">
     <div class= "col-4 text-right">
-      <label for="teacher">Instructor's name:</label>
+      <label id="label" for="teacher">Instructor's name:</label>
     </div> 
     <div class="col-6">
       <div class="d-inline-flex align-items-start">
         <select name="teacherName" id="addTeacher">
         <option value="">--Please choose an instructor--</option>
         {{#each instructors}}
-          <option value= {{this.id}}>{{this.name}} {{this.lastName}}</option>
+          <option id="options" value= {{this.id}}>{{this.name}} {{this.lastName}}</option>
         {{/each}}
       </select>
       </div>
@@ -80,14 +100,14 @@
 {{!Enter dance type}}
   <div class="row">
     <div class="col-4 text-right">
-      <label>Dance style:</label>
+      <label id="label">Dance style:</label>
     </div>
     <div class="col-6">
       <div class="d-inline-flex align-items-start">
         <select name="dance" id="addDance">
           <option value="">--Please choose a dance style--</option>
           {{#each dances}}
-            <option value= {{this.id}}>{{this.danceTitle}}</option>
+            <option id="options" value= {{this.id}}>{{this.danceTitle}}</option>
           {{/each}}
         </select>
       </div>
@@ -96,12 +116,14 @@
 
 
 <div class="d-flex justify-content-center pt-3">
-  <button id = "add" class="btn" type="button">Add </button>
+  <button id = "add" class="btn" type="button">Add</button>
   
 </div>
-<div class="d-flex justify-content-center pt-3">
-  
-  <a href="http://localhost:8080/teacher">Click here to add a new Instructor</a>
+
+<div id="addInst" class="d-flex justify-content-center pt-3 text-center">
+  <p>Don't see your name under the instructors?<br>
+    <a href="http://localhost:8080/teacher">Click here to add a new teacher</a></p>
+
 </div> 
 
   </div>
@@ -113,6 +135,7 @@
 
 
 <script type="text/javascript">
+
 $("#add").on("click", function () {
   console.log($("#className").val().trim())
   

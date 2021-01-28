@@ -1,4 +1,6 @@
 <style>
+    /* Us.handlebars styling */
+    /* Card styling */
         #profileImg {
         object-fit: cover;
         height: 200px;
@@ -16,15 +18,31 @@
         padding: 10px;
         filter: drop-shadow(0 0 0.75rem rgb(7, 24, 39));
     }
+/* Link hover effect- found at: 
+https://css-tricks.com/having-fun-with-link-hover-effects//*/
+:root {
+    --mainColor: rgb(17, 127, 131);
+}
+.card-body a {
+  color: var(--mainColor);
+  text-decoration: none;
+}
 
-    #profileCard a {
-        text-decoration: none;
-        color:teal;
-    }
+.card-body a:hover {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--mainColor);
+}
 
-    #profileCard a:hover {
-        background-color: turquoise;
-    }
+@supports not(-webkit-text-stroke: 2px red) {
+  .card-body a:hover {
+    text-shadow:
+      3px 3px 0 var(--mainColor),
+      -1px -1px 0 var(--mainColor),
+      1px -1px 0 var(--mainColor),
+      -1px 1px 0 var(--mainColor),
+      1px 1px 0 var(--mainColor);
+  }
+}
 
 </style>
 
@@ -40,8 +58,11 @@
     </div>
 
       <div class="card-body">
-    <a href="https://www.linkedin.com/in/kgomozova/" class="card-link">Linkedin</a>
-    <a href="https://github.com/kgo87" class="card-link">GitHub</a>
+    <a href="https://www.linkedin.com/in/kgomozova/" class="card-link">
+    <i class="fa fa-linkedin" style="font-size:36px"></i> Linkedin</a>
+    
+    <a href="https://github.com/kgo87" class="card-link">
+    <i class="fa fa-github" style="font-size:36px"></i></i> GitHub</a>
   </div>
 </div>
 
@@ -53,8 +74,10 @@
     </div>
 
       <div class="card-body">
-    <a href="#" class="card-link">Linkedin</a>
-    <a href="#" class="card-link">GitHub</a>
+    <a href="#" class="card-link">
+    <i class="fa fa-linkedin" style="font-size:36px"></i> Linkedin</a>
+    <a href="#" class="card-link">
+    <i class="fa fa-github" style="font-size:36px"></i></i> GitHub</a>
   </div>
 </div>
 
@@ -66,8 +89,10 @@
     </div>
 
       <div class="card-body">
-    <a href="https://www.linkedin.com/in/amethyst-white-1942761b7/" class="card-link">Linkedin</a>
-    <a href="https://github.com/Am-White" class="card-link">GitHub</a>
+    <a href="https://www.linkedin.com/in/amethyst-white-1942761b7/" class="card-link">
+    <i class="fa fa-linkedin" style="font-size:36px"></i> Linkedin</a>
+    <a href="https://github.com/Am-White" class="card-link">
+    <i class="fa fa-github" style="font-size:36px"></i></i> GitHub</a>
   </div>
 </div>
 
@@ -79,8 +104,11 @@
     </div>
 
       <div class="card-body">
-    <a href="#" class="card-link">Linkedin</a>
-    <a href="https://github.com/cwf1984" class="card-link">GitHub</a>
+    <a href="#" class="card-link">
+    <i class="fa fa-linkedin" style="font-size:36px"></i> Linkedin</a>
+
+    <a href="https://github.com/cwf1984" class="card-link">
+    <i class="fa fa-github" style="font-size:36px"></i></i> GitHub</a>
   </div>
 </div>
 
