@@ -1,0 +1,31 @@
+
+<style media="screen">
+h2, 
+li {
+    color: white;
+}
+</style>
+
+<div id="center">
+  <div id="Instructors">
+    <h2> Our Instructors:</h2>
+
+
+    <ul id = "danceList">
+
+      {{#each instructors}}
+
+      <li>
+        Instructor's Name: {{this.name}} , {{this.lastName}}. Location: {{this.location}}. Hourly Rate:  {{this.hourlyRate}}. Rating:  {{this.rating}}
+
+
+      </li>
+
+
+     
+        {{/each}}
+    </ul>
+
+
+  </div>
+</div>
