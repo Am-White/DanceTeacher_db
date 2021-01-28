@@ -1,24 +1,23 @@
 const db = require("../models");
 const router = require("express").Router();
 const passport = require("../config/passport");
+const sequelize = require("sequelize");
 
-router.post("/api/login", passport.authenticate("local"), (req, res) => {
-  res.json({
-    username: req.user.username,
-    id: req.user.id
-  });
+
+router.post("/login", passport.authenticate("local"), (req, res) => {
+  res.redirect('/')
 });
 
 router.post("/api/register", (req, res) => {
   console.log(req.body)
-  db.Users.create({
+  db.User.create({
     username: req.body.username,
     password: req.body.password,
     email: req.body.email,
     fullName: req.body.fullName
   })
     .then((data) => {
-      res.json(data)
+      res.redirect(307,"/login");
     })
     .catch(err => {
       res.status(401).json(err);

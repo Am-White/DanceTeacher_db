@@ -2,7 +2,7 @@
 const bcrypt = require("bcryptjs");
 
 module.exports = function (sequelize, DataTypes) {
-  const Users = sequelize.define("Users", {
+  const User = sequelize.define("User", {
 
     username: {
       type: DataTypes.STRING,
@@ -23,7 +23,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       unique: false,
       validate: {
-
+        isEmail: true
       }
     },
 
@@ -31,24 +31,22 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      validate: {
-        isEmail: true
-      }
+
     },
 
   });
 
-  Users.prototype.validPassword = function (password) {
+  User.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
   };
 
-  Users.addHook("beforeCreate", users => {
+  User.addHook("beforeCreate", users => {
     users.password = bcrypt.hashSync(
       users.password,
       bcrypt.genSaltSync(10),
       null
     );
   });
-  return Users;
+  return User;
 
 };

@@ -9,7 +9,7 @@ module.exports = function(app) {
 
   // index route loads index.handlebars
   app.get("/", function(req, res) {
-    res.render(path.join(__dirname, "../views/index.handlebars"));
+    res.render(path.join(__dirname, "../views/login.handlebars"));
   });
 
   // app.get("/cms", function(req, res) {
@@ -150,8 +150,12 @@ module.exports = function(app) {
   // });
 
   app.get("/login", function(req, res) {
-    res.render("login");
+    if (req.user) {
+      res.redirect("/index");
+  }
+      res.render("login");
   });
+
     app.get("/register", function(req, res) {
       res.render("register");
     });   

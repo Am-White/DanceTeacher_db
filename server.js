@@ -49,11 +49,7 @@ require("./routes/dance-api-routes.js")(app);
 require("./routes/class-api-routes.js")(app);
 require("./routes/instructor-api-routes.js")(app);
 
-app.use (
-  userAuth,
-  userR
-
-);
+app.use(userAuth,userR);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
