@@ -1,10 +1,6 @@
 <style>
-
-  #searchCard {
-    margin:auto;
-    margin-top: 100px;
-    max-width: 500px;
-  }
+  /* Styling for search2.handlebars*/
+  /* Card styling */
       #searchCard {
       margin:auto;
       margin-top: 100px;
@@ -13,56 +9,58 @@
       box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
       backdrop-filter: blur(20px);
       background-color: rgba(245, 244, 244, 0.863);
-      border-style: outset;
-      border-color:rgba(37, 35, 35, 0.733);
-      border-width: 3px;
     }
 
     #searchHeader {
       font-family: 'Cinzel Decorative', cursive; 
       font-weight: 700;
-      color: white;
-      background-color:rgb(4, 4, 78);
+      color: rgb(207, 205, 205);
+      background-color:rgb(80, 130, 170);
       padding-top: 20px;
     }
 
-    #cardBody {
-      margin:auto;
+    .card-body {
+      padding-left: 30px;
+      padding-top: 25px;
       max-width: 550px;
       font-family: 'Cinzel', serif;
-      font-weight: 900;
       font-size: 18px;
     }
-
-    button {
-      background-color:rgb(4, 4, 78);
-      color: white;
-      width: 75px;
+        #label {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 18px;
     }
-
-    p {
+    #addByInstr {
+      font-family: 'Cinzel Decorative', cursive;
+      background-color:teal;
       color: white;
+      width: 100px;
     }
-
-    li {
+  #add, #updateSearch {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 14px;
+      background-color:teal;
       color: white;
-    }
-
-    h3 {
-      color: white;
-    }
-
-
-  #searchBtn {
-    background-color: teal;
-    border-color: teal;
+      width: 150px;
+      height: 50px;
+      margin-left: 10px;
   }
 
-  #searchBtn:hover {
-    background-color:rgb(4, 182, 182);
-    color: rgb(247, 245, 245);
-    border-color: rgb(4, 182, 182);
+  #addByInstr:hover, #add:hover, #updateSearch:hover {
+    background-color: rgb(39, 221, 197);
+    color: black;
   }
+
+  #searchStyle, #searchLocation, #searchTeacher {
+    font-family: 'Cinzel Decorative', cursive;
+    width: 300px;
+  }
+
+  #searchRes, #search_results {
+    color:blanchedalmond;
+  }
+
 
 </style>
 
@@ -74,25 +72,27 @@
   </div>
   <div class="card-body">
 
-    <p>Please search by Instructor:</p>
+    <p id="label" class="text-center">Please search by Instructor:</p>
 
 {{!Select by teacher name}}
-      <label for="teacher">Teacher's name:</label>
+      <label id="label" class="col-4 text-right" for="teacher">Teacher's name:</label>
       <select name="teacherName" id="searchTeacher">
         <option value="">--Select--</option>
 
     {{#each instructors}}
         <option value= {{this.id}}>{{this.name}} {{this.lastName}}</option>
     {{/each}}
-      </select><br>
-    <button id = "addByInstr" type="button">Search </button>
+      </select><br><br>
 
+      <div class="d-flex justify-content-center">
+    <button id = "addByInstr" class="btn" type="button">Search </button>
+      </div><br>
 
    {{!-- <button id = "add" type="button">Search </button> --}}
    {{!-- <a id="openBtn" href="http://localhost:8080/classes/{{danceID}}/{{instructorID}}" class="btn btn-outline-info">Search</a> --}}
-  <p>|| OR by Style and Location:||</p>
+  <p id="label" class="text-center">|| OR || <br> by Style and Location:</p>
 {{!Select by dance type}}
-      <label>Dance style:</label>
+      <label id="label" class="col-4 text-right" >Dance style:</label>
       <select name="dance" id="searchStyle">
          <option value="">--Select--</option>
       
@@ -103,21 +103,20 @@
 
 
 {{!Select by location}}
-      <label>Location:</label>
+      <label id="label" class="col-4 text-right" s>Location:</label>
       <select name="location" id="searchLocation">
          <option value="">--Select--</option>
 
     {{#each instructors}}
       <option value={{this.id}}>{{this.location}}</option>
     {{/each}}
-      </select><br>
+      </select><br><br>
 
 
-
-    <button id = "add" type="button">Search </button>
-
-    <button id = "updateSearch" type="button">Update your Search </button>
-
+<div id="buttonGrp" class="d-flex justify-content-center">
+    <button id = "add" class="btn" type="button">Search </button>
+    <button id = "updateSearch" class="btn" type="button">Update your Search </button>
+</div>
   </div>
 
   
@@ -127,7 +126,7 @@
 </div>
 
 
-<h3> Searched Class</h3>
+<h3 id="searchRes"> Searched Class</h3>
 
 <div id = "search_results"></div>
 
