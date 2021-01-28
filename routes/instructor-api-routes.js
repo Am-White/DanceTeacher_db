@@ -21,6 +21,22 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/instructors", function(req, res) {
+    var instArray = [];
+    db.Instructor.findAll({
+    }).then(function(results) {
+        results.forEach(element =>
+          instArray.push(element.dataValues));
+        console.log(instArray)
+        var hbsObject = {
+            instructors: instArray
+          };
+        console.log(hbsObject);
+        res.render("instructors", hbsObject); 
+
+    });
+  });
+
 
   // POST route for saving a new post
   app.post("/api/instructors", function(req, res) {
