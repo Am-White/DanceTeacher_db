@@ -1,44 +1,48 @@
 <style>
-
+/* Styling for teacher.handlebars*/
+/* Card styling */
   #searchCard {
     margin:auto;
     margin-top: 100px;
-    max-width: 500px;
-  }
-    #searchCard {
-      margin:auto;
-      margin-top: 100px;
-      max-width: 550px;
-      opacity: 90%;
-      box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-      backdrop-filter: blur(20px);
-      background-color: rgba(245, 244, 244, 0.863);
-      border-style: outset;
-      border-color:rgba(37, 35, 35, 0.733);
-      border-width: 3px;
+    max-width: 550px;
+    opacity: 90%;
+    box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+    backdrop-filter: blur(20px);
+    background-color: rgba(245, 244, 244, 0.863);
     }
 
-    #searchHeader {
-      font-family: 'Cinzel Decorative', cursive; 
-      font-weight: 700;
-      color: white;
-      background-color:rgb(4, 4, 78);
-      padding-top: 20px;
+  #searchHeader {
+    font-family: 'Cinzel Decorative', cursive; 
+    font-weight: 700;
+    color: rgb(207, 205, 205);
+    background-color:rgb(80, 130, 170);
+    padding-top: 20px;
     }
 
     #cardBody {
-      margin:auto;
+      padding-left: 50px;
+      padding-top: 25px;
       max-width: 550px;
       font-family: 'Cinzel', serif;
       font-weight: 900;
       font-size: 18px;
     }
-
+    /* Styling of text areas*/
+    textarea {
+      font-family: 'Cinzel Decorative', cursive;
+    }
+    /* Add button and hover styling */
     #add {
-      background-color:rgb(4, 4, 78);
+      font-family: 'Cinzel Decorative', cursive;
+      background-color:teal;
       color: white;
       width: 75px;
   }
+
+      #add:hover {
+      background-color: rgb(39, 221, 197);
+      color: black;
+    }
 
 </style>
 
@@ -65,19 +69,19 @@
       </search>
       
     </div>
-  </div><br>
+  </div>
 
 {{!Enter rating}}
   <div class="row">
     <div class="col-4 text-right">
         <label>Rating:</label>
     </div>
-    <div class="col-6"
-        <search name="price" id="newPrice">
+    <div class="col-6">
+        <search name="rating" id="newRating">
             <textarea id = "rating" type="text" name="rating" placeholder = "Out of 5"></textarea>
         </search>
       </div> 
-        </div><br><br>
+        </div>
 
 {{!Enter location}}
   <div class="row">
@@ -90,9 +94,6 @@
       </search>
       </div> 
   </div>
-      <br>
-
-
 
 {{!Enter class hourly rate}}
   <div class="row">
@@ -100,28 +101,19 @@
         <label>Price per Hour:</label>
       </div> 
       <div class="col-6">
-        <div class="d-flex justify-content-end">
         <search name="price" id="newPrice">
             <textarea id = "hrate" type="text" name="instructor_name"></textarea>
         </search>
-        </div>
-      </div> 
-        
-    </div>      <br><br>
+      </div>  
+    </div> <br>
 
 <div class="d-flex justify-content-center">
   <button id = "add" class="btn" type="button">Add </button>
 </div>
-
-
   </div>
   <div class="card-footer text-muted">
-
   </div>
-
   </div>
-
-
 </div>
 
 
