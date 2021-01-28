@@ -13,7 +13,7 @@
     <div class="logo">Register</div>
     <!-- Main Form -->
     <div class="login-form-1">
-        <form action="/register" method="POST" id="register-form" class="text-left">
+        <form action="/api/register" method="POST" id="register-form" class="text-left">
             <div class="login-form-main-message"></div>
             <div class="main-login-form">
                 <div class="login-group">
@@ -24,19 +24,14 @@
                     <div class="form-group">
                         <label for="password" class="sr-only">Password</label>
                         <input type="password" class="form-control" id="password" name="password" placeholder="password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password_confirm" class="sr-only">Password Confirm</label>
-                        <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="confirm password" required>
-                    </div>
-                    
+                    </div>    
                     <div class="form-group">
                         <label for="email" class="sr-only">Email</label>
                         <input type="text" class="form-control" id="email" name="email" placeholder="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="fullname" class="sr-only">Full Name</label>
-                        <input type="text" class="form-control" id="fullname" name="fullname" placeholder="full name" required>
+                        <label for="fullName" class="sr-only">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" name="fullName" placeholder="full name" required>
                     </div>
                     
                     <!--Male or female main message-->
