@@ -9,7 +9,7 @@ module.exports = function(app) {
 
   // index route loads index.handlebars
   app.get("/", function(req, res) {
-    res.render(path.join(__dirname, "../views/login.handlebars"));
+    res.render(path.join(__dirname, "../views/index.handlebars"));
   });
 
   // app.get("/cms", function(req, res) {
