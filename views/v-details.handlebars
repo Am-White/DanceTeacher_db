@@ -55,34 +55,26 @@
 
             <div id = "searchCard" class="card">
 
-                <img id="danceImg" src="/img/{{name}}.jpg" alt={{name}} width="400" height="250" class="card-img-top">
+                <img id="danceImg" src="/img/{{name}}.jpg" alt={{name}} width="400" height="300" class="card-img-top">
 
                 <div class="card-body" id="cardBody">
                     <h5 class="card-title">{{this.classTitle}}</h5>
                 </div>
 
                 <ul class="list-group list-group-flush" id="cardBody">
-                    <li class="list-group-item">Teacher Name: {{this.instrName}}{{this.instrLastName}}</li>
+                    <li class="list-group-item">Instructor Name: {{this.instrName}} {{this.instLastName}}</li>
                     <li class="list-group-item">Dance Style: {{this.name}}</li>
                     <li class="list-group-item">Location: {{this.location}}</li>
-                    <li class="list-group-item">Hourly Rate: {{this.hourlyRate}}</li>
+                    <li class="list-group-item">Hourly Rate (USD): {{this.hourlyRate}}</li>
                     <li class="list-group-item">Rating: {{this.rating}}</li>
                 </ul>
 
                 <div class="d-flex justify-content-center pt-3">
-                    <a href="http://localhost:8080/results">Back to results</a>
+                    <a href="http://localhost:8080/search">Back to results</a>
                 </div>
 
             </div>
 
-        {{!-- <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/iXOuzMZ8TtU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <p class="card-text">This could be you!</p>
-                </div>
-            </div>
-        </div> --}}
 
 
     </div>
