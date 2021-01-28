@@ -11,7 +11,7 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.render(path.join(__dirname, "../views/index.handlebars"));
   });
-  
+
   app.get("/search", function(req, res) {
     var classArray = [];
     db.Class.findAll({
@@ -29,7 +29,6 @@ module.exports = function(app) {
   });
 
   app.get("/classes/:danceId/:instructorID", function(req,res) {
-    console.log(Object.values(req.params))
     idParams = Object.values(req.params)
     db.Class.findOne({
       include: 
@@ -51,8 +50,7 @@ module.exports = function(app) {
       rating: selectedInstructorRating, location: selectedInstructorLocation, hourlyRate: selectedInstructorRate});
     });
   });
-    // res.render("details");
-  // });
+
 
   app.get("/notfound", function(req,res) {
     res.render("404");

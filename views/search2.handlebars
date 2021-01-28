@@ -1,10 +1,6 @@
 <style>
-
-  #searchCard {
-    margin:auto;
-    margin-top: 100px;
-    max-width: 500px;
-  }
+  /* Styling for search2.handlebars*/
+  /* Card styling */
       #searchCard {
       margin:auto;
       margin-top: 100px;
@@ -13,43 +9,58 @@
       box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
       backdrop-filter: blur(20px);
       background-color: rgba(245, 244, 244, 0.863);
-      border-style: outset;
-      border-color:rgba(37, 35, 35, 0.733);
-      border-width: 3px;
     }
 
     #searchHeader {
       font-family: 'Cinzel Decorative', cursive; 
       font-weight: 700;
-      color: white;
-      background-color:rgb(4, 4, 78);
+      color: rgb(207, 205, 205);
+      background-color:rgb(80, 130, 170);
       padding-top: 20px;
     }
 
-    #cardBody {
-      margin:auto;
+    .card-body {
+      padding-left: 30px;
+      padding-top: 25px;
       max-width: 550px;
       font-family: 'Cinzel', serif;
-      font-weight: 900;
       font-size: 18px;
     }
-
-     #add {
-      background-color:rgb(4, 4, 78);
-      color: white;
-      width: 75px;
+        #label {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 18px;
     }
-
-  #searchBtn {
-    background-color: teal;
-    border-color: teal;
+    #addByInstr {
+      font-family: 'Cinzel Decorative', cursive;
+      background-color:teal;
+      color: white;
+      width: 100px;
+    }
+  #add, #updateSearch {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 14px;
+      background-color:teal;
+      color: white;
+      width: 150px;
+      height: 50px;
+      margin-left: 10px;
   }
 
-  #searchBtn:hover {
-    background-color:rgb(4, 182, 182);
-    color: rgb(247, 245, 245);
-    border-color: rgb(4, 182, 182);
+  #addByInstr:hover, #add:hover, #updateSearch:hover {
+    background-color: rgb(39, 221, 197);
+    color: black;
   }
+
+  #searchStyle, #searchLocation, #searchTeacher {
+    font-family: 'Cinzel Decorative', cursive;
+    width: 300px;
+  }
+
+  #searchRes, #search_results {
+    color:blanchedalmond;
+  }
+
 
 </style>
 
@@ -61,25 +72,29 @@
   </div>
   <div class="card-body">
 
-    <p>Please search by Instructor:</p>
+    <p id="label" class="text-center">Please search by Instructor:</p>
 
 {{!Select by teacher name}}
-      <label for="teacher">Teacher's name:</label>
+      <label id="label" class="col-4 text-right" for="teacher">Teacher's name:</label>
       <select name="teacherName" id="searchTeacher">
+        <option value="">--Select--</option>
 
     {{#each instructors}}
         <option value= {{this.id}}>{{this.name}} {{this.lastName}}</option>
     {{/each}}
-      </select><br>
-    <button id = "addByInstr" type="button">Search </button>
+      </select><br><br>
 
+      <div class="d-flex justify-content-center">
+    <button id = "addByInstr" class="btn" type="button">Search </button>
+      </div><br>
 
    {{!-- <button id = "add" type="button">Search </button> --}}
    {{!-- <a id="openBtn" href="http://localhost:8080/classes/{{danceID}}/{{instructorID}}" class="btn btn-outline-info">Search</a> --}}
-  <p>|| OR by Style and Location:||</p>
+  <p id="label" class="text-center">|| OR || <br> by Style and Location:</p>
 {{!Select by dance type}}
-      <label>Dance style:</label>
+      <label id="label" class="col-4 text-right" >Dance style:</label>
       <select name="dance" id="searchStyle">
+         <option value="">--Select--</option>
       
     {{#each dances}}
       <option value={{this.id}}>{{this.danceTitle}}</option>
@@ -88,36 +103,20 @@
 
 
 {{!Select by location}}
-      <label>Location:</label>
+      <label id="label" class="col-4 text-right" s>Location:</label>
       <select name="location" id="searchLocation">
+         <option value="">--Select--</option>
 
     {{#each instructors}}
       <option value={{this.id}}>{{this.location}}</option>
     {{/each}}
-      </select><br>
-
-{{!Select by price}}
-    {{!-- <label>Price per Hour:</label>
-    <select name="price" id="searchPrice">
-    
-    {{#each instructors}}
-      <option value={{this.id}}>{{this.hourlyRate}}</option>
-    {{/each}}
-      </select><br> --}}
-
-{{!Select by rating -- commented out star icon}}
-    {{!-- <label>Rating:</label>
-    <select name="rating" id="searchRating" placeholder="Out of 5 stars">
-      
-    {{#each instructors}}
-      <option value={{this.id}}>{{this.rating}} </option>
-    {{/each}}
-      </select><br><br> --}}
+      </select><br><br>
 
 
-    <button id = "add" type="button">Search </button>
-    {{!-- <a id="search" href="" class="btn btn-primary">Search</a> --}}
-
+<div id="buttonGrp" class="d-flex justify-content-center">
+    <button id = "add" class="btn" type="button">Search </button>
+    <button id = "updateSearch" class="btn" type="button">Update your Search </button>
+</div>
   </div>
 
   
@@ -127,37 +126,85 @@
 </div>
 
 
-<h3> Searched Class</h3>
+<h3 id="searchRes"> Searched Class</h3>
 
 <div id = "search_results"></div>
 
 
 <script type="text/javascript">  
   $("#add").on("click", function () {
+    $("#search_results").empty();
     var instructor = $("#searchTeacher").val().trim()
-    var danceID = $("#searchStyle").val()
+    var danceID = $("#searchStyle").val();
+    var location = $("#searchLocation").find(":selected").text();
+    console.log(location);
+
     console.log(danceID)
-    var searchedCriteria = {location: "Redmond", danceID: danceID};
+    var searchedCriteria = {location: location, danceID: danceID};
     $.ajax("/api/classes/search", {
         method: "POST",
         data: searchedCriteria
     }).then(response => {
         {{!-- return response.json(); --}}
         console.log(response);
-        console.log(response[0].classTitle)
-        console.log(response[0].Instructor.name + " " + response[0].Instructor.lastName );
-        var clDiv = $("<div class='classes'>");
-        for(var i= 0; i<response.length;i++) {
-          console.log(response[i].classTitle)
-          var a = $("<li>");
-          var p2 = a.text(response[i].classTitle);
-          clDiv.append(p2)
+        console.log(response.length!=0)
+        if(response.length!=0) {
+          console.log(response[0].classTitle)
+          console.log(response[0].Instructor.name + " " + response[0].Instructor.lastName );
+          var clDiv = $("<div class='classes'>");
+          for(var i= 0; i<response.length;i++) {
+            console.log(response[i].classTitle)
+            var a = $("<li>");
+            var classTitle = a.text(response[i].classTitle);
+            var classDetails = $("<p>").text("Instructor: " + response[i].Instructor.name + " " + response[i].Instructor.lastName + ", Rating: " + 
+              response[i].Instructor.rating + ", Price per hour: " + response[i].Instructor.hourlyRate + " USD")
+            clDiv.append(classTitle)
+            clDiv.append(classDetails)
+          }
+          $("#search_results").append(clDiv);
         }
-        $("#search_results").append(clDiv);
+        else {
+          var clDiv = $("<div class='classes'>");
+          var p2 = $("<p>").text("No classes are found for this location. Please choose another location")
+          clDiv.append(p2);
+          $("#search_results").append(clDiv);
+        }
 
       
         })
 
+  });
+
+    $("#addByInstr").on("click", function () {
+      $("#search_results").empty();
+    var instructorID = $("#searchTeacher").val();
+    console.log(instructorID);
+
+    var searchedCriteria = {instructorID: instructorID};
+    $.ajax("/api/classes/instructorIDSearch", {
+        method: "POST",
+        data: searchedCriteria
+    }).then(response => {
+        console.log(response);
+        console.log(response[0].classTitle)
+        var clDiv = $("<div class='classes'>");
+            for(var i= 0; i<response.length;i++) {
+            console.log(response[i].classTitle)
+            var a = $("<li>");
+            var classTitle = a.text(response[i].classTitle);
+            var classDetails = $("<p>").text("Instructor: " + response[i].Instructor.name + " " + response[i].Instructor.lastName + ", Rating: " + 
+              response[i].Instructor.rating + ", Price per hour: " + response[i].Instructor.hourlyRate + " USD")
+            clDiv.append(classTitle)
+            clDiv.append(classDetails)
+          }
+          $("#search_results").append(clDiv);
+
+        })
+
+  });
+
+  $("#updateSearch").on("click", function () {
+    location.reload();
   });
 
 </script>

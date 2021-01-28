@@ -1,53 +1,54 @@
-<style media="screen">
-body {
-background: rgb(142,232,238);
-background: radial-gradient(circle, rgba(142,232,238,0.9) 30%, rgba(148,187,233,0.8) 100%);
-}
+<style>
+  /* Styling for dances.handlebars */
+  /* Card styling */
+    #searchCard {
+    margin:auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    max-width: 550px;
+    opacity: 90%;
+    box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+    backdrop-filter: blur(20px);
+    background-color: rgba(245, 244, 244, 0.863);
+    }
 
-h1 {
-    color: #606060;
-    text-align: center;
-    margin: 30px;
-    font-size: 72px;
-    font-weight: bolder;
-    font-stretch: expanded;
-}
+    #searchHeader {
+    font-family: 'Cinzel Decorative', cursive; 
+    font-weight: 700;
+    color: rgb(207, 205, 205);
+    background-color:rgb(80, 130, 170);
+    padding-top: 20px;
+    }
 
-li {
-  font-size:20px;
-}
-
-h2 {
-  color:#606060;
-}
-
+    #cardBody {
+    margin:auto;
+    max-width: 550px;
+    }
+  /* List style*/
+    #danceList {
+      list-style-type: none;
+      padding-right: 15px;
+      font-family: 'Cinzel', serif;
+    }
 
 </style>
 
-<h1>Let's Dance Together</h1>
-
-
-<div id="center">
-  <div id="Dances">
-    <h2> Offered Dances:</h2>
-
+<div class="container" id="center">
+  <div class="card" id="searchCard">
+    <div id="searchHeader" class="card-header text-center">
+      <h2> Offered Dances:</h2>
+    </div>
 
     <ul id = "danceList">
-
       {{#each dances}}
 
-      <li>
+      <li id="danceList" class="text-center">
         Dance Style: {{this.danceTitle}}
         <img src="/img/{{danceTitle}}.jpg" alt={{danceTitle}} width="400" height="250"/>
-
-
       </li>
 
-
-     
         {{/each}}
     </ul>
-
 
   </div>
 </div>

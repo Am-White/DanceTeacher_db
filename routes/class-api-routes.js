@@ -73,15 +73,18 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/classes/search", function(req, res) {
-      res.render("search");
-    });
-  
+  app.post("/api/classes/instructorIDSearch", function(req, res) {
+    db.Class.findAll({
+      where: {instructorID: req.body.instructorID
+      },
+      include: 
+        [{model: db.Instructor, as: "Instructor"}],
+    }).then(function(results) {
+      res.json(results);
 
-  //vanessa
-  app.get("/classes/results", function (req, res) {
-    res.render("a-results");
+    });
   });
+
 
   app.post("/api/classes", function(req, res) {
     db.Class.create({

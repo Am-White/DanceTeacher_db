@@ -12,7 +12,7 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the posts
+
   app.get("/api/instructors", function(req, res) {
     db.Instructor.findAll({
     }).then(function(results) {
@@ -21,8 +21,35 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/instructor/:id", function(req, res) {
+    db.Instructor.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(results) {
+      console.log(results.dataValues);
+      res.render("update_instr", results.dataValues);
+    });
+  });
 
-  // POST route for saving a new post
+  app.get("/instructors", function(req, res) {
+    var instArray = [];
+    db.Instructor.findAll({
+    }).then(function(results) {
+        results.forEach(element =>
+          instArray.push(element.dataValues));
+        console.log(instArray)
+        var hbsObject = {
+            instructors: instArray
+          };
+        console.log(hbsObject);
+        res.render("instructors", hbsObject); 
+
+    });
+  });
+
+
+
   app.post("/api/instructors", function(req, res) {
     db.Instructor.create({
       name: req.body.name,
@@ -35,7 +62,21 @@ module.exports = function(app) {
     });
   });
 
-  // DELETE route for deleting posts
+
+  app.put("/api/instructors/:id", function(req, res) {
+    db.Instructor.update({
+      rating: req.body.rating,
+      location: req.body.location,
+      hourlyRate: req.body.hourlyRate
+    }, {
+      where: {
+      id: req.params.id}
+    }).then(function(results) {
+      res.json(results);
+    });
+  });
+
+
   app.delete("/api/instructors/:id", function(req, res) {
     db.Instructor.destroy({
       where: {
