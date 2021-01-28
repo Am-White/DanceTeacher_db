@@ -86,11 +86,6 @@ module.exports = function(app) {
   });
 
 
-  //vanessa
-  // app.get("/classes/results", function (req, res) {
-  //   res.render("a-results");
-  // });
-
   app.post("/api/classes", function(req, res) {
     db.Class.create({
       classTitle: req.body.classTitle,
