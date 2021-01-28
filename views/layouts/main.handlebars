@@ -10,8 +10,11 @@
   <link rel="stylesheet" href="/css/style.css"/>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   
   <title>Dance Studio</title>
@@ -27,22 +30,28 @@
         font-weight:400;
         font-size: 50px;
         font-family: 'Cinzel Decorative', cursive;
+        margin: 10px 0;
     }
         #jumbo-header {
         background-color: rgb(157, 157, 158);
         opacity: 60%;
         }
 
-        .nav {
-          flex-wrap: nowrap;
+        #mainHead {
+          display: block;
         }
 
+        #mainNav {
+          flex-wrap: nowrap;
+          margin-top: 5px;
+          margin-right:5px;
+        }
         li a {
           color:rgb(10, 10, 10);
         }
 
         li a:hover {
-          color:rgb(231, 233, 233);
+          color:rgb(35, 104, 104);
         }
 
         #homeBtn {
@@ -69,14 +78,14 @@
 
   {{!Header}}
 <div id="jumbo-header" class="jumbotron-fluid">
-  <nav class="navbar navbar-expand-lg navbar-light ">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div id="mainHead" class="container-fluid text-left">
       <a id="header" class="navbar-brand">Dance Class Search</a>
     </div>
 
 {{!Nav links}}
 
-  <ul class="nav nav-pills navbar-dark">
+  <ul id="mainNav" class="nav nav-pills navbar-dark">
   <li class="nav-item">
     <a id="homeBtn" class="nav-link active" aria-current="page" href="http://localhost:8080/index">Home</a>
   </li>
@@ -86,11 +95,11 @@
       <li><a class="dropdown-item" href="http://localhost:8080/login">Login</a></li>
       <li><a class="dropdown-item" href="http://localhost:8080/register">Sign-up</a></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Your saved classes</a></li>
+      <li><a class="dropdown-item" href="#"> ... </a></li>
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="http://localhost:8080/us">Contact Us</a>
+    <a class="nav-link" href="http://localhost:8080/us">Contact</a>
   </li>
   </ul>
 </div>

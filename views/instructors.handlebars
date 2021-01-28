@@ -22,7 +22,23 @@
     }
 
     #danceList {
-      list-style-type: circle;
+      list-style-type: none;
+      margin-right: 15px;
+    }
+
+    #instTitle {
+      font-weight: 600;
+      margin: 0;
+      text-decoration: underline;
+    }
+
+    #border {
+      border-style: double;
+      border-width: 10px;
+      border-color:rgb(68, 167, 162);
+      margin: 10px;
+      border-radius: 5%;
+      padding-top: 15px;
     }
     
 </style>
@@ -36,12 +52,14 @@
     <ul id = "danceList" class="text-center">
       {{#each instructors}}
       <li>
-
-        Instructor's Name: {{this.name}} , {{this.lastName}}. <br>
-        Location: {{this.location}}. <br>
-        Hourly Rate:  {{this.hourlyRate}}. Rating:  {{this.rating}}
+        <div id="border">
+        <p id="instTitle">Instructor's Name:</p>{{this.name}} , {{this.lastName}}
+        <p id="instTitle">Location: </p>{{this.location}} <br>
+        <p id="instTitle">Hourly Rate: </p> {{this.hourlyRate}}<p id="instTitle"> Rating: </p> {{this.rating}}
+        <br>
+        <a id="openBtn" href="http://localhost:8080/instructor/{{id}}" class="btn btn-outline-info">Edit Details</a>
         <br><br>
-
+        </div>
       </li>
       {{/each}}
     </ul>
