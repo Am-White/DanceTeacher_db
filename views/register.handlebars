@@ -33,6 +33,16 @@
                         <label for="fullName" class="sr-only">Full Name</label>
                         <input type="text" class="form-control" id="fullName" name="fullName" placeholder="full name" required>
                     </div>
+                    <div class="form-group">
+                        
+                        {{!-- <input type="checkbox" class="form-control" name="isInstructor" value="isInstructor"> --}}
+                        <label for="isInstructor" class="sr-only">I'm an instructor</label>
+                        <select id="isInstructor" name="isInstructor">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+
+                        </select>
+                    </div>
                     
                     <!--Male or female main message-->
 
@@ -59,4 +69,30 @@
         </form>
     </div>
 </div>
+
+
+
+<script type="text/javascript">
+{{!-- $("#add").on("click", function () {
+    var id = $("#id").text();
+    console.log(id)
+    console.log("/api/instructors/" + id);
+
+   $.ajax("/api/instructors/" + id, {
+      type: "GET",
+      data: 
+      {
+        rating: $("#rating").val().trim(),
+        location: $("#location").val().trim(),
+        hourlyRate: $("#hrate").val().trim()
+        }
+    }).then(
+      function() {
+        console.log("instructor details updated");
+        location.href = "http://localhost:8080/index"
+      }
+    );
+  }); --}}
+
+</script>
     <!-- end:Main Form -->

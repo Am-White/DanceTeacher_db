@@ -105,7 +105,12 @@ module.exports = function(app) {
   });
 
   app.get("/index", function(req, res) {
-    res.render("index2");
+    // var isInstructor = req.session.passport.user.dataValues.isInstructor;
+    var hbsObject = {
+      // isInstructor: req.session.passport.user.dataValues.isInstructor
+      isInstructor: true
+    }
+    res.render("index2", hbsObject);
   });
 
   app.get("/us", function(req, res) {

@@ -4,17 +4,22 @@ const passport = require("../config/passport");
 const sequelize = require("sequelize");
 
 
+
 router.post("/login", passport.authenticate("local"), (req, res) => {
+  res.session
+  console.log(req.session.passport.user.dataValues)
   res.redirect('/')
 });
 
 router.post("/api/register", (req, res) => {
   console.log(req.body)
+  // req.body.isInstructor=true
   db.User.create({
     username: req.body.username,
     password: req.body.password,
     email: req.body.email,
-    fullName: req.body.fullName
+    fullName: req.body.fullName,
+    // isInstructor: req.body.isInstructor
   })
     .then((data) => {
       res.redirect(307,"/login");
@@ -36,7 +41,8 @@ router.get("/api/user_data", (req, res) => {
   } else {
     res.json({
       username: req.user.username,
-      id: req.user.id
+      id: req.user.id,
+      isInstructor: req.user.isInstructor
     });
   }
 });

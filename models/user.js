@@ -33,6 +33,11 @@ module.exports = function (sequelize, DataTypes) {
       unique: true,
 
     },
+    // isInstructor: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false,
+
+    // },
 
   });
 
