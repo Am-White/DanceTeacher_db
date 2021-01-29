@@ -1,42 +1,47 @@
 const db = require("../models");
 const router = require("express").Router();
 const passport = require("../config/passport");
-const sequelize = require("sequelize");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
+const session = require('express-session');
 
-
-router.post("/login", passport.authenticate("local"), (req, res) => {
-  res.redirect('/')
-});
-
+// Route for signup
 router.post("/api/register", (req, res) => {
-  console.log(req.body)
   db.User.create({
     username: req.body.username,
     password: req.body.password,
     email: req.body.email,
-    fullName: req.body.fullName
+    fullName: req.body.fullName,
+    isInstructor: req.body.isInstructor
   })
     .then((data) => {
-      res.redirect(307,"/login");
+      res.render("login", data);
     })
     .catch(err => {
       res.status(401).json(err);
     });
 });
 
-// Route for logging user out
-router.get("/logout", (req, res) => {
-  req.logout();
-  res.redirect("/");
-});
+  //Route for login
+  router.post("/api/login", passport.authenticate("local"), (req, res) => {
+      res.redirect('/index')
+  });
 
+// Route for logging user out
+router.post("/logout", (req, res) => {
+  req.logout();
+  req.session.destroy();
+  res.redirect("/");
+})
+
+//Routes for user data
 router.get("/api/user_data", (req, res) => {
   if (!req.user) {
     res.json({});
   } else {
     res.json({
       username: req.user.username,
-      id: req.user.id
+      id: req.user.id,
+      isInstructor: req.user.isInstructor
     });
   }
 });

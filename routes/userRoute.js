@@ -7,7 +7,8 @@ const users = require("../models/users");
 router.get("/api/user/:id", (req, res) => {
     db.Users.findAll({ 
     where:{
-        id: req.params.id 
+        id: req.params.id,
+        isInstructor: req.body.isInstructor
      }
     }).then((data, err) => {
         console.log(`data = ${data}`)
@@ -16,12 +17,14 @@ router.get("/api/user/:id", (req, res) => {
     })
 });
 
+// Form should give boolean value for instructor
 router.post("/api/user", (req, res) => {
     db.Users.create({
         username: req.user.username,
         password: req.user.password,
         email: req.user.email,
         fullName: req.user.fullName,
+        isInstructor: req.user.isInstructor
     }).then(newUser => {
         res.json(newUser);
     });
