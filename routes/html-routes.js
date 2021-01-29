@@ -1,4 +1,4 @@
-
+//Pathing
 var path = require("path");
 var db = require("../models");
 
@@ -11,7 +11,6 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.render(path.join(__dirname, "../views/index.handlebars"));
   });
-
 
   app.get("/search", function(req, res) {
     var classArray = [];
@@ -117,12 +116,33 @@ module.exports = function(app) {
     res.render("teacher");
   });
 
-  app.get("/register", function(req, res) {
-    res.render("register");
-  });
+
+  // app.post("/register", async (req, res) => {
+  //   try {
+  //     const hashedPassword = await bcrypt.hash(req.body.password, 10)
+  //   users.push({
+  //       id: Date.now().toString(),
+  //       username: req.body.username,
+  //       password: hashedPassword,
+  //       email: req.body.email,
+  //       fullnName: req.body.fullName
+  //     })
+  //     res.redirect('/login')
+  //   } catch {
+  //     res.redirect('/register')
+  //   }
+  //   console.log(users)
+  // });
 
   app.get("/login", function(req, res) {
-    res.render("login");
+    if (req.user) {
+      res.redirect("/index");
+  }
+      res.render("login");
   });
 
+    app.get("/register", function(req, res) {
+      res.render("register");
+    });   
 };
+
