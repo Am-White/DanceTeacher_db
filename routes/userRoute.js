@@ -8,7 +8,6 @@ router.get("/api/user/:id", (req, res) => {
     db.Users.findAll({ 
     where:{
         id: req.params.id,
-        isInstructor: req.body.isInstructor
      }
     }).then((data, err) => {
         console.log(`data = ${data}`)
@@ -24,7 +23,6 @@ router.post("/api/user", (req, res) => {
         password: req.user.password,
         email: req.user.email,
         fullName: req.user.fullName,
-        isInstructor: req.user.isInstructor
     }).then(newUser => {
         res.json(newUser);
     });
