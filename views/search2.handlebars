@@ -1,82 +1,11 @@
-<style>
-  /* Styling for search2.handlebars*/
-  /* Card styling */
-      #searchCard {
-      margin:auto;
-      margin-top: 100px;
-      max-width: 550px;
-      opacity: 90%;
-      box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-      backdrop-filter: blur(20px);
-      background-color: rgba(245, 244, 244, 0.863);
-    }
-      #resultCard {
-      margin:auto;
-      margin-bottom: 100px;
-      max-width: 800px;
-      opacity: 90%;
-      box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-      backdrop-filter: blur(20px);
-      background-color: rgba(245, 244, 244, 0.863);
-      font-family: 'Cinzel', serif;
-      font-weight: 700;
-      font-size: 15px;
-      list-style: none;
-    }
-
-    #searchHeader {
-      font-family: 'Cinzel Decorative', cursive; 
-      font-weight: 700;
-      color: rgb(207, 205, 205);
-      background-color:rgb(80, 130, 170);
-      padding-top: 20px;
-    }
-
-    .card-body {
-      padding: auto;
-      max-width: 550px;
-      font-family: 'Cinzel', serif;
-      color: black;
-      font-size: 18px;
-    }
-      #label {
-    font-family: 'Cinzel', serif;
-    font-weight: bold;
-    font-size: 18px;
-    }
-    #addByInstr {
-      font-family: 'Cinzel Decorative', cursive;
-      background-color:teal;
-      color: white;
-      width: 100px;
-    }
-  #add, #updateSearch {
-      font-family: 'Cinzel Decorative', cursive;
-      font-size: 15px;
-      background-color:teal;
-      color: white;
-      height: 50px;
-      margin-left: 10px;
-  }
-
-  #addByInstr:hover, #add:hover, #updateSearch:hover {
-    background-color: rgb(39, 221, 197);
-    color: black;
-  }
-
-  #searchStyle, #searchLocation, #searchTeacher {
-    font-family: 'Cinzel Decorative', cursive;
-    width: 300px;
-  }
-</style>
 
 <div class="container">
 
-<div class="card" id="searchCard">
-  <div id="searchHeader" class="card-header text-center">
+<div class="card" id="searchTwoCard">
+  <div id="searchTwoHeader" class="card-header text-center">
     <h3>Search dance class</h3>
   </div>
-  <div class="card-body">
+  <div id="searchTwoBody"class="card-body">
 
     <p id="label" class="text-center">Please search by Instructor:</p>
 
@@ -135,7 +64,7 @@
 
 <div id="demo" class="container collapse">
   <div class="card text-center" id="resultCard">
-  <div id="searchHeader">
+  <div id="searchTwoHeader">
     <h3> Searched Class</h3>
   </div>
 
