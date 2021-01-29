@@ -33,13 +33,13 @@ module.exports = function (sequelize, DataTypes) {
       unique: true,
 
     },
-    // isInstructor: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: false,
 
-    // },
+    isInstructor: {
+      type: DataTypes.BOOLEAN,
+    },
 
   });
+
 
   User.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);

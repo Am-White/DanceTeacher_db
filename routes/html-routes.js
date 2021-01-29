@@ -2,9 +2,8 @@
 var path = require("path");
 var db = require("../models");
 const session = require('express-session');
-const router = require("express").Router();
-const passport = require("../config/passport");
-const bcrypt = require("bcryptjs");
+var exphbs = require("express-handlebars");
+
 
 module.exports = function(app) {
 
@@ -15,16 +14,15 @@ module.exports = function(app) {
     next();
   }
 
-  
   // Each of the below routes just handles the HTML view that the user gets sent to.
 
   // index route loads index.handlebars
   app.get("/", function(req, res) {
-    res.render(path.join(__dirname, "../views/login.handlebars"));
+          res.redirect("/index");
   });
 
   app.get('/index', requireLogin, function (req,res) {
-    res.render('index');
+    res.render('index2');
   })
 
   app.get("/search", function(req, res) {
@@ -120,12 +118,12 @@ module.exports = function(app) {
   });
 
   app.get("/index", function(req, res) {
-    // var isInstructor = req.session.passport.user.dataValues.isInstructor;
+    var isInstructor = req.session.passport.user.dataValues.isInstructor;
     var hbsObject = {
-      // isInstructor: req.session.passport.user.dataValues.isInstructor
+      isInstructor: req.session.passport.user.dataValues.isInstructor,
       isInstructor: true
     }
-    res.render("index2", hbsObject);
+    res.render("index", hbsObject);
   });
 
   app.get("/us", requireLogin, function(req, res) {
@@ -136,32 +134,12 @@ module.exports = function(app) {
     res.render("teacher");
   });
 
-
-  // app.post("/register", async (req, res) => {
-  //   try {
-  //     const hashedPassword = await bcrypt.hash(req.body.password, 10)
-  //   users.push({
-  //       id: Date.now().toString(),
-  //       username: req.body.username,
-  //       password: hashedPassword,
-  //       email: req.body.email,
-  //       fullnName: req.body.fullName
-  //     })
-  //     res.redirect('/login')
-  //   } catch {
-  //     res.redirect('/register')
-  //   }
-  //   console.log(users)
-  // });
-
     app.get("/register", function(req, res) {
       res.render("register");
     });   
 
     app.get("/login", function(req, res) {
-      //   if (req.user) {
-      //     res.redirect("/index");
-      // }
+
           res.render("login");
       });
 
