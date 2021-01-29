@@ -8,12 +8,56 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
+<style>
+     /* Styling for login.handlebars*/
+        #loginCard {
+        max-width: 550px;
+        opacity: 90%;
+        box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+        backdrop-filter: blur(20px);
+        background-color: rgba(245, 244, 244, 0.863);
+        margin: auto;
+    }
+
+    #loginHeader {
+        font-family: 'Cinzel Decorative', cursive; 
+        font-weight: 700;
+        color: rgb(207, 205, 205);
+        background-color:rgb(80, 130, 170);
+        padding-top: 20px;
+    }
+
+    #loginBody {
+      margin:auto;
+      padding: 10px;
+      width: 100%;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    /* Button for login page*/
+    #loginBtn {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgb(51, 148, 204);
+    }
+    #loginBtn:hover {
+    background-color: rgb(91, 202, 247);
+    }
+
+</style>
 <!-- REGISTRATION FORM -->
-<div class="text-center" style="padding:50px 0">
-    <div class="logo">Register</div>
+<div class="container">
+<div id="loginCard" class="text-center card">
+    <div id="loginHeader" class="logo">
+        <h3>Register</h3>
+    </div>
     <!-- Main Form -->
-    <div class="login-form-1">
+
+    <div class="login-form-1" id="loginBody">
         <form action="/api/register" method="POST" id="register-form" class="text-left">
+
             <div class="login-form-main-message"></div>
             <div class="main-login-form">
                 <div class="login-group">
@@ -51,12 +95,15 @@
                         <label for="reg_agree">i agree with <a href="#">terms</a></label>
                     </div> --}}
                 </div>
-                <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+                <button id="loginBtn" type="submit" class="login-button btn"><i class="fa fa-chevron-right"></i></button>
             </div>
             <div class="etc-login-form">
                 <p>Already have an account? <a href="/login">Login here</a></p>
             </div>
         </form>
     </div>
+    <div class="card-footer text-muted">
+        </div>
+</div>
 </div>
     <!-- end:Main Form -->

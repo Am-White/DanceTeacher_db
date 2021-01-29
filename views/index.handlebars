@@ -22,6 +22,17 @@
     font-family: 'Cinzel', serif;
     font-weight: bold;
     font-size: 18px;
+    padding-right: 15px;
+    }
+
+      #border {
+      border-style: double;
+      border-width: 10px;
+      border-color:rgb(68, 167, 162);
+      margin: 10px;
+      border-radius: 5%;
+      padding-top: 15px;
+      padding-bottom: 5px;
     }
 
 </style>
@@ -39,7 +50,7 @@
 
       {{#each classes}}
 
-      <p>
+      <p id="border">
         {{this.classTitle}} <br>
         <a id="openBtn" href="http://localhost:8080/classes/{{danceID}}/{{instructorID}}" class="btn btn-outline-info text-center">Details</a>
 

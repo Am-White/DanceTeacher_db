@@ -18,6 +18,7 @@
     color: rgb(207, 205, 205);
     background-color:rgb(80, 130, 170);
     padding-top: 20px;
+    
     }
 
     #cardBody {
@@ -29,11 +30,19 @@
       list-style-type: none;
       padding-right: 15px;
       font-family: 'Cinzel', serif;
+      padding-top: 7px;
+      font-weight: 800;
+    }
+      #imgBorder {
+      border-style: double;
+      border-width: 10px;
+      border-color:rgb(68, 167, 162);
+      border-radius: 5%;
     }
 
 </style>
 
-<div class="container" id="center">
+<div id="danceCont" class="container">
   <div class="card" id="searchCard">
     <div id="searchHeader" class="card-header text-center">
       <h2> Offered Dances:</h2>
@@ -44,11 +53,16 @@
 
       <li id="danceList" class="text-center">
         Dance Style: {{this.danceTitle}}
-        <img src="/img/{{danceTitle}}.jpg" alt={{danceTitle}} width="400" height="250"/>
+
+        <img id="imgBorder" src="/img/{{danceTitle}}.jpg" alt={{danceTitle}} width="400" height="250"/>
       </li>
 
         {{/each}}
     </ul>
+
+      <div class="card-footer text-muted">
+
+  </div>
 
   </div>
 </div>
