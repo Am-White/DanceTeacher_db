@@ -34,10 +34,6 @@ module.exports = function (sequelize, DataTypes) {
 
     },
 
-    isInstructor: {
-      type: DataTypes.BOOLEAN,
-    },
-
   });
 
 

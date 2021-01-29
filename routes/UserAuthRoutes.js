@@ -11,7 +11,6 @@ router.post("/api/register", (req, res) => {
     password: req.body.password,
     email: req.body.email,
     fullName: req.body.fullName,
-    isInstructor: req.body.isInstructor
   })
     .then((data) => {
       res.render("login", data);
@@ -41,7 +40,6 @@ router.get("/api/user_data", (req, res) => {
     res.json({
       username: req.user.username,
       id: req.user.id,
-      isInstructor: req.user.isInstructor
     });
   }
 });
