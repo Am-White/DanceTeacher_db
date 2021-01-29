@@ -18,13 +18,13 @@ router.get("/api/user/:id", (req, res) => {
 
 // Form should give boolean value for instructor
 router.post("/api/user", (req, res) => {
-    // req.user.isInstructor=true
+    req.user.isInstructor=true
     db.Users.create({
         username: req.user.username,
         password: req.user.password,
         email: req.user.email,
         fullName: req.user.fullName,
-        // isInstructor: req.user.isInstructor
+        isInstructor: req.user.isInstructor
     }).then(newUser => {
         res.json(newUser);
     });

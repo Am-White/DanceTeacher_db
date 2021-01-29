@@ -1,16 +1,31 @@
 //Pathing
 var path = require("path");
 var db = require("../models");
-
+const session = require('express-session');
+const router = require("express").Router();
+const passport = require("../config/passport");
+const bcrypt = require("bcryptjs");
 
 module.exports = function(app) {
 
+  const requireLogin = (req, res, next) => {
+    if (!req.user) {
+      return res.redirect('/login')
+    }
+    next();
+  }
+
+  
   // Each of the below routes just handles the HTML view that the user gets sent to.
 
   // index route loads index.handlebars
   app.get("/", function(req, res) {
-    res.render(path.join(__dirname, "../views/index.handlebars"));
+    res.render(path.join(__dirname, "../views/login.handlebars"));
   });
+
+  app.get('/index', requireLogin, function (req,res) {
+    res.render('index');
+  })
 
   app.get("/search", function(req, res) {
     var classArray = [];
@@ -113,7 +128,7 @@ module.exports = function(app) {
     res.render("index2", hbsObject);
   });
 
-  app.get("/us", function(req, res) {
+  app.get("/us", requireLogin, function(req, res) {
     res.render("us");
   });
 
@@ -139,15 +154,19 @@ module.exports = function(app) {
   //   console.log(users)
   // });
 
-  app.get("/login", function(req, res) {
-    if (req.user) {
-      res.redirect("/index");
-  }
-      res.render("login");
-  });
-
     app.get("/register", function(req, res) {
       res.render("register");
     });   
+
+    app.get("/login", function(req, res) {
+      //   if (req.user) {
+      //     res.redirect("/index");
+      // }
+          res.render("login");
+      });
+
+    app.get("/logout", function(req, res) {
+      res.render("login");
+    }); 
 };
 
