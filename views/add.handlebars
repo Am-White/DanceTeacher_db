@@ -77,7 +77,7 @@
 
 <script>
   $("#add").on("click", function () {
-    console.log($("#className").val().trim())
+    {{!-- console.log($("#className").val().trim() --}}
     
      $.ajax("/api/classes/", {
         type: "POST",

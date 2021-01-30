@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "process.ENV.DB_PASS",
+    "password": "process.ENV.DB_PAS",
     "database": "dance_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
