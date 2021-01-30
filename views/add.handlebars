@@ -77,13 +77,13 @@
 
 <script>
   $("#add").on("click", function () {
-    console.log($("#className").val().trim()
+    console.log($("#addName").val().trim())
     
      $.ajax("/api/classes/", {
         type: "POST",
         data: 
         {
-          classTitle: $("#className").val().trim(),
+          classTitle: $("#addName").val().trim(),
           danceID: $("#addDance").val().trim(),
           instructorID: $("#addTeacher").val().trim()
           }
