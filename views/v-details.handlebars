@@ -1,18 +1,55 @@
+
+<style>
+    #searchCard {
+        margin:auto;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        max-width: 550px;
+        opacity: 90%;
+        box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+        backdrop-filter: blur(20px);
+        background-color: rgba(245, 244, 244, 0.863);
+    }
+
+    #searchHeader {
+        font-family: 'Cinzel Decorative', cursive; 
+        font-weight: 700;
+        color: rgb(207, 205, 205);
+        background-color:rgb(80, 130, 170);
+        padding-top: 20px;
+    }
+
+    #cardBody {
+      margin:auto;
+      width: 100%;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    #addInst {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 18px;
+    }
+
+</style>
+ 
 <div class="container">
 
 
-            <div id = "newCard" class="card">
-                <div id="newHeader" class="card-header text-center">
-                    <h3>Details</h3>
+            <div id = "searchCard" class="card">
+                <div id="searchHeader" class="card-header text-center">
+                    <h3>Add New Dance Class</h3>
                 </div>
 
                 <img id="danceImg" src="/img/{{name}}.jpg" alt={{name}} width="400" height="300" class="card-img-top">
 
-                <div class="card-body" id="newCardBody">
+                <div class="card-body" id="cardBody">
                     <h5 class="card-title">{{this.classTitle}}</h5>
                 </div>
 
-                <ul class="list-group list-group-flush" id="newCardBody">
+                <ul class="list-group list-group-flush" id="cardBody">
                     <li class="list-group-item">Instructor Name: {{this.instrName}} {{this.instLastName}}</li>
                     <li class="list-group-item">Dance Style: {{this.name}}</li>
                     <li class="list-group-item">Location: {{this.location}}</li>

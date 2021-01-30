@@ -8,13 +8,7 @@ require('dotenv').config();
 var session = require('express-session')
 var express = require("express");
 var exphbs = require("express-handlebars");
-
-// eslint-disable-next-line no-unused-vars
-const path = require("path");
-var bodyParser = require('body-parser')
-
 var passport = require('./config/passport')
-
 
 // console.log(process.env)
 

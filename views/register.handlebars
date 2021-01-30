@@ -8,6 +8,45 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
+<style>
+     /* Styling for login.handlebars*/
+        #loginCard {
+        max-width: 550px;
+        opacity: 90%;
+        box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+        backdrop-filter: blur(20px);
+        background-color: rgba(245, 244, 244, 0.863);
+        margin: auto;
+    }
+
+    #loginHeader {
+        font-family: 'Cinzel Decorative', cursive; 
+        font-weight: 700;
+        color: rgb(207, 205, 205);
+        background-color:rgb(80, 130, 170);
+        padding-top: 20px;
+    }
+
+    #loginBody {
+      margin:auto;
+      padding: 10px;
+      width: 100%;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    /* Button for login page*/
+    #loginBtn {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgb(51, 148, 204);
+    }
+    #loginBtn:hover {
+    background-color: rgb(91, 202, 247);
+    }
+
+</style>
 <!-- REGISTRATION FORM -->
 <div class="container">
 <div id="loginCard" class="text-center card">
@@ -37,15 +76,6 @@
                     <div class="form-group">
                         <label for="fullName" class="sr-only">Full Name</label>
                         <input type="text" class="form-control" id="fullName" name="fullName" placeholder="full name" required>
-
-                    </div>
-                    <div class="form-group">
-<div>
-  <input type="checkbox" id="isInstructor" name="isInstructor" value="false">
-  <label for="isInstructor">Instructor</label>
-</div>
-                        </select>
-
                     </div>
                     <div class="form-group">
 <div>
@@ -54,7 +84,6 @@
 </div>
                         </select>
                     </div>
-                    
                     
                     
                     <!--Male or female main message-->

@@ -1,12 +1,82 @@
-<script src="../public/js/search2.js"></script>
+<style>
+  /* Styling for search2.handlebars*/
+  /* Card styling */
+      #searchCard {
+      margin:auto;
+      margin-top: 100px;
+      max-width: 550px;
+      opacity: 90%;
+      box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+      backdrop-filter: blur(20px);
+      background-color: rgba(245, 244, 244, 0.863);
+    }
+      #resultCard {
+      margin:auto;
+      margin-bottom: 100px;
+      max-width: 800px;
+      opacity: 90%;
+      box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+      backdrop-filter: blur(20px);
+      background-color: rgba(245, 244, 244, 0.863);
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 15px;
+      list-style: none;
+    }
+
+    #searchHeader {
+      font-family: 'Cinzel Decorative', cursive; 
+      font-weight: 700;
+      color: rgb(207, 205, 205);
+      background-color:rgb(80, 130, 170);
+      padding-top: 20px;
+    }
+
+    .card-body {
+      padding: auto;
+      max-width: 550px;
+      font-family: 'Cinzel', serif;
+      color: black;
+      font-size: 18px;
+    }
+      #label {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 18px;
+    }
+    #addByInstr {
+      font-family: 'Cinzel Decorative', cursive;
+      background-color:teal;
+      color: white;
+      width: 100px;
+    }
+  #add, #updateSearch {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 15px;
+      background-color:teal;
+      color: white;
+      height: 50px;
+      margin-left: 10px;
+  }
+
+  #addByInstr:hover, #add:hover, #updateSearch:hover {
+    background-color: rgb(39, 221, 197);
+    color: black;
+  }
+
+  #searchStyle, #searchLocation, #searchTeacher {
+    font-family: 'Cinzel Decorative', cursive;
+    width: 300px;
+  }
+</style>
 
 <div class="container">
 
-<div class="card" id="searchTwoCard">
-  <div id="searchTwoHeader" class="card-header text-center">
+<div class="card" id="searchCard">
+  <div id="searchHeader" class="card-header text-center">
     <h3>Search dance class</h3>
   </div>
-  <div id="searchTwoBody"class="card-body">
+  <div class="card-body">
 
     <p id="label" class="text-center">Please search by Instructor:</p>
 
@@ -65,7 +135,7 @@
 
 <div id="demo" class="container collapse">
   <div class="card text-center" id="resultCard">
-  <div id="searchTwoHeader">
+  <div id="searchHeader">
     <h3> Searched Class</h3>
   </div>
 
@@ -75,3 +145,88 @@
   </div>
   </div>
 </div>
+
+
+
+
+<script type="text/javascript">  
+  $("#add").on("click", function () {
+    $("#search_results").empty();
+    var instructor = $("#searchTeacher").val().trim()
+    var danceID = $("#searchStyle").val();
+    var location = $("#searchLocation").find(":selected").text();
+    console.log(location);
+
+    console.log(danceID)
+    var searchedCriteria = {location: location, danceID: danceID};
+    $.ajax("/api/classes/search", {
+        method: "POST",
+        data: searchedCriteria
+    }).then(response => {
+        {{!-- return response.json(); --}}
+        console.log(response);
+        console.log(response.length!=0)
+        if(response.length!=0) {
+          console.log(response[0].classTitle)
+          console.log(response[0].Instructor.name + " " + response[0].Instructor.lastName );
+          var clDiv = $("<div class='classes'>");
+          for(var i= 0; i<response.length;i++) {
+            console.log(response[i].classTitle)
+            var a = $("<li>");
+            var classTitle = a.text(response[i].classTitle);
+            var classDetails = $("<p>").text("Instructor: " + response[i].Instructor.name + " " + response[i].Instructor.lastName + ", Rating: " + 
+              response[i].Instructor.rating + ", Price per hour: " + response[i].Instructor.hourlyRate + " USD")
+            clDiv.append(classTitle)
+            clDiv.append(classDetails)
+          }
+          $("#search_results").append(clDiv);
+        }
+        else {
+          var clDiv = $("<div class='classes'>");
+          var p2 = $("<p>").text("No classes are found for this location. Please choose another location")
+          clDiv.append(p2);
+          $("#search_results").append(clDiv);
+        }
+
+      
+        })
+
+  });
+
+    $("#addByInstr").on("click", function () {
+      $("#search_results").empty();
+    var instructorID = $("#searchTeacher").val();
+    console.log(instructorID);
+
+    var searchedCriteria = {instructorID: instructorID};
+    $.ajax("/api/classes/instructorIDSearch", {
+        method: "POST",
+        data: searchedCriteria
+    }).then(response => {
+        console.log(response);
+        console.log(response[0].classTitle)
+        var clDiv = $("<div class='classes'>");
+            for(var i= 0; i<response.length;i++) {
+            console.log(response[i].classTitle)
+            var a = $("<li>");
+            var classTitle = a.text(response[i].classTitle);
+            var classDetails = $("<p>").text("Instructor: " + response[i].Instructor.name + " " + response[i].Instructor.lastName + ", Rating: " + 
+              response[i].Instructor.rating + ", Price per hour: " + response[i].Instructor.hourlyRate + " USD")
+            clDiv.append(classTitle)
+            clDiv.append(classDetails)
+          }
+          $("#search_results").append(clDiv);
+
+        })
+
+  });
+
+  $("#updateSearch").on("click", function () {
+    location.reload();
+  });
+
+</script>
+
+
+
+
