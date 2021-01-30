@@ -1,18 +1,56 @@
+<style>
+  #Classes {
+    margin:auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    max-width: 550px;
+    opacity: 90%;
+    box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+    backdrop-filter: blur(20px);
+    background-color: rgba(245, 244, 244, 0.863);
+    }
+
+    #headerTeach {
+    font-family: 'Cinzel Decorative', cursive; 
+    font-weight: 700;
+    color: rgb(207, 205, 205);
+    background-color:rgb(80, 130, 170);
+    padding-top: 20px;
+    }
+
+    #classList {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 18px;
+    padding-right: 15px;
+    }
+
+      #border {
+      border-style: double;
+      border-width: 10px;
+      border-color:rgb(68, 167, 162);
+      margin: 10px;
+      border-radius: 5%;
+      padding-top: 15px;
+      padding-bottom: 5px;
+    }
+
+</style>
 
 <div id="center" class="container">
 
-  <div id="indexCard" class="card">
-    <div id="indexHeader" class="card-header text-center">
+  <div id="Classes" class="card">
+    <div id="headerTeach" class="card-header text-center">
       <h2>Classes:</h2>
       <p>"Let's Dance Together"</p>
     </div><br>
 
 
-    <ul id = "indexClassList" class="text-center">
+    <ul id = "classList" class="text-center">
 
       {{#each classes}}
 
-      <p id="indexBorder">
+      <p id="border">
         {{this.classTitle}} <br>
         <a id="openBtn" href="http://localhost:8080/classes/{{danceID}}/{{instructorID}}" class="btn btn-outline-info text-center">Details</a>
 

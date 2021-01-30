@@ -1,7 +1,13 @@
 var db = require("../models");
 
 module.exports = function(app) {
-
+  // app.get("/api/dances", function(req, res) {
+  //   db.Dance.findAll({
+  //   }).then(function(results) {
+  //     res.json(results);
+  //     console.log(results)
+  //   });
+  // });
 
   app.get("/api/dances", function(req, res) {
     var danceArray = [];
@@ -11,6 +17,23 @@ module.exports = function(app) {
           danceArray.push(element.dataValues));
         console.log(danceArray)
         res.json(danceArray); 
+
+    });
+  });
+
+  app.get("/dances", function(req, res) {
+    var danceArray = [];
+    db.Dance.findAll({
+    }).then(function(results) {
+        results.forEach(element =>
+          danceArray.push(element.dataValues));
+        console.log(danceArray)
+        var hbsObject = {
+            dances: danceArray
+          };
+        console.log(hbsObject);
+        res.render("dances", hbsObject); 
+
     });
   });
 
