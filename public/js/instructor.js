@@ -1,61 +1,50 @@
+/* eslint-disable no-unused-vars */
 
 $(document).ready(function() {
+	var classDetails = $(".classDetails");
 
+	$("classDetails").on("click", function(event) {
+		event.preventDefault();
 
-    var classDetails = $(".classDetails");
+		var id = $(this).data("id");
+		var teacherName = $("#teacherName");
+		var danceStyle = $("#danceStyle");
+		var location = $("#location");
+		var hourlyRate = $("#hourlyRate");
+		var rating = $("#rating");
 
-    $("classDetails").on("click", function(event) {
+		var classDetails = {
+			teacherName: this.instrName + this.instrLastName,
+			location: this.location,
+			hourlyRate: this.hourlyRate,
+			rating: this.rating
+		};
 
-        event.preventDefault();
+		var classType = {
+			danceStyle: this.danceStyle,
+			classTitle: this.classTitle
+		};
 
-        var id = $(this).data("id");
-        var teacherName = $("#teacherName");
-        var danceStyle = $("#danceStyle");
-        var location = $("#location");
-        var hourlyRate = $("#hourlyRate");
-        var rating = $("#rating");
+		getInstructorDetails(id);
+		getDanceType(id);
+	});
 
-        var classDetails = {
-            teacherName: this.instrName + this.instrLastName,
-            location: this.location,
-            hourlyRate: this.hourlyRate,
-            rating: this.rating
-        };
+	function getInstructorDetails(id) {
+		$.ajax("/api/instructor" + id, {
+			type: "GET",
+			data: classDetails
+		}).then(function() {
+			console.log("Class info added");
+			location.reload();
+		});
+	}
 
-        var classType = {
-            danceStyle = this.danceStyle,
-            classTitle = this.classTitle
-        };
-
-        getInstructorDetails(id);
-        getDanceType(id);
-
-    });
-
-
-
-    function getInstructorDetails(id) {
-    $.ajax("/api/instructor" + id, {
-        type: "GET",
-        data: classDetails
-    }).then(
-        function() {
-            console.log("Class info added");
-            location.reload();
-        }
-    )};
-
-    function getDanceType (id) {
-        $.ajax("/api/dances" + id, {
-            type: "GET",
-            data: classType
-        }).then(
-            function() {
-                console.log("Dance style added");
-                location.reload();
-            }
-        )};
-
-
-  
+	function getDanceType(id) {
+		$.ajax("/api/dances" + id, {
+			type: "GET"
+		}).then(function() {
+			console.log("Dance style added");
+			location.reload();
+		});
+	}
 });

@@ -2,591 +2,594 @@
 /*====main.handlebars css====*/
 /*===========================*/
 body {
-    background-image: url(/img/dancer-in-studio-wondows.jpg);
-    background-size: cover;
+	background-image: url(/img/dancer-in-studio-wondows.jpg);
+	background-size: cover;
 }
 
 #header {
-    color:rgb(255, 254, 254);
-    font-weight:400;
-    font-size: 50px;
-    font-family: 'Cinzel Decorative', cursive;
-    margin: 10px;
+	color: rgb(255, 254, 254);
+	font-weight: 400;
+	font-size: 50px;
+	font-family: 'Cinzel Decorative', cursive;
+	margin: 10px;
 }
-    #jumbo-header {
-    background-color: rgba(158, 183, 204, 0.726);
-    }
-
-    #mainHead {
-      display: block;
-    }
-    /*Header nav styling and hover effects*/
-    #mainNav {
-      flex-wrap: nowrap;
-      margin-top: 5px;
-      margin-right:5px;
-    }
-
-    li a {
-      color:rgb(10, 10, 10);
-    }
-
-    li a:hover {
-      color:rgb(35, 104, 104);
-    }
-    
-    #homeBtn {
-      background-color: teal;
-    }
-
-    #homeBtn:hover {
-      background-color: aquamarine;
-      color: black;
-    }
-    /*Footer and heart hover effect */
-    #heartFt:hover {
-      color: red;
-    }
-
-    #footer {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      color: rgb(156, 156, 156);
-      text-align: center;
-    }
-    /*===========================*/
-    /*====404.handlebars css====*/
-    /*===========================*/
-    #notFound {
-        text-align: center;
-        margin: 250px;
-      }
-    
-    #notFound p {
-        font-size: 100px;
-        font-weight: 600;
-        color: burlywood;
-        font-family: 'Cinzel Decorative', cursive;
-        }
-    /*===========================*/
-    /*add.handlebars*/
-    /*===========================*/
-
-    /* Card styling */
-  #addCard {
-    margin:auto;
-    margin-top: 100px;
-    margin-bottom: 50px;
-    max-width: 550px;
-    opacity: 90%;
-    box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-    backdrop-filter: blur(20px);
-    background-color: rgba(245, 244, 244, 0.863);
-    }
-
-    #addHeader {
-    font-family: 'Cinzel Decorative', cursive; 
-    font-weight: 700;
-    color: rgb(207, 205, 205);
-    background-color:rgb(80, 130, 170);
-    padding-top: 20px;
-    }
-
-    #addCardBody {
-    margin:auto;
-    max-width: 550px;
-    }
-    /* Select styling */
-    #label {
-    font-family: 'Cinzel', serif;
-    font-weight: bold;
-    font-size: 18px;
-    text-align: left;
-    }
-    /* bottom of card and link font styling */
-    #addInst {
-    font-family: 'Cinzel', serif;
-    font-weight: bold;
-    font-size: 13px;
-    }
-    /* Input and option styling */
-    #addTeacher, #addDance, #addName {
-    font-family: 'Cinzel Decorative', cursive;
-    width: 300px;
-    }
-    /* Add button and hover styling */
-    #add {
-    background-color:teal;
-    color: white;
-    width: 75px;
-    font-family: 'Cinzel Decorative', cursive;
-    }
-
-    #add:hover {
-    background-color: rgb(39, 221, 197);
-    color: black;
-    }
-
-    /*===============*/
-    /*=======Dances.handlebars css=======*/
-    /*===============*/
-    #danceCard {
-        margin:auto;
-        margin-top: 100px;
-        margin-bottom: 50px;
-        max-width: 550px;
-        opacity: 90%;
-        box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-        backdrop-filter: blur(20px);
-        background-color: rgba(245, 244, 244, 0.863);
-        }
-    
-        #danceHeader {
-        font-family: 'Cinzel Decorative', cursive; 
-        font-weight: 700;
-        color: rgb(207, 205, 205);
-        background-color:rgb(80, 130, 170);
-        padding-top: 20px;
-        }
-    
-      /* List style*/
-        #danceList {
-          list-style-type: none;
-          padding-right: 15px;
-          font-family: 'Cinzel', serif;
-          padding-top: 7px;
-          font-weight: 800;
-        }
-          #danceImgBorder {
-          border-style: double;
-          border-width: 10px;
-          border-color:rgb(68, 167, 162);
-          border-radius: 5%;
-        }
-    /*==================*/
-    /*=====index.handlebars=====*/
-    /*==================*/
-    #indexCard {
-        margin:auto;
-        margin-top: 100px;
-        margin-bottom: 50px;
-        max-width: 550px;
-        opacity: 90%;
-        box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-        backdrop-filter: blur(20px);
-        background-color: rgba(245, 244, 244, 0.863);
-        }
-    
-        #indexHeader {
-        font-family: 'Cinzel Decorative', cursive; 
-        font-weight: 700;
-        color: rgb(207, 205, 205);
-        background-color:rgb(80, 130, 170);
-        padding-top: 20px;
-        }
-    
-        #indexClassList {
-        font-family: 'Cinzel', serif;
-        font-weight: bold;
-        font-size: 18px;
-        padding-right: 15px;
-        }
-    
-          #indexBorder {
-          border-style: double;
-          border-width: 10px;
-          border-color:rgb(68, 167, 162);
-          margin: 10px;
-          border-radius: 5%;
-          padding-top: 15px;
-          padding-bottom: 5px;
-        }
-    /*===================*/
-    /*====index2.handlebars====*/
-    /*===================*/
-    #inTwoCont {
-        max-width: 750px;
-        margin: auto;
-        text-align: center;
-        padding-top: 100px;
-        margin-bottom: 50px;
-    }
-    .inTwoCard {
-        opacity: 80%;
-        height: 175px;
-    }
-    .inTwoTitle {
-      font-weight: 900;
-    }
-
-    #inTwoBody {
-      margin:auto;
-      max-width: 500px;
-      font-family: 'Cinzel', serif;
-      font-weight: 900;
-    }
-
-    #inTwoBody h5 {
-      font-size: 20px;
-      padding-top:10px;
-    }
-
-    #inTwoCard {
-      margin:auto;
-      margin-top: 100px;
-      max-width: 550px;
-      opacity: 90%;
-      box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-      backdrop-filter: blur(20px);
-      background-color: rgba(245, 244, 244, 0.863);
-    }
-
-    /* Add button and hover styling */
-    #inTwoBtn {
-      font-family: 'Cinzel Decorative', cursive;
-      font-size: 15px;
-      background-color:teal;
-      color: white;
-      width: 130px;
-  }
-
-      #inTwoBtn:hover {
-      background-color: rgb(39, 221, 197);
-      color: black;
-    }
-    /*===================*/
-    /*instructors.handlebars*/
-    /*===================*/
-      /* Card styling*/
-      #Instructors {
-        margin:auto;
-        margin-top: 100px;
-        margin-bottom: 50px;
-        max-width: 550px;
-        opacity: 90%;
-        box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-        backdrop-filter: blur(20px);
-        background-color: rgba(245, 244, 244, 0.863);
-        }
-    
-        #instrHeader {
-        font-family: 'Cinzel Decorative', cursive; 
-        font-weight: 700;
-        color: rgb(207, 205, 205);
-        background-color:rgb(80, 130, 170);
-        padding-top: 20px;
-        }
-        /*list style*/
-        #danceList {
-          list-style-type: none;
-          margin-right: 15px;
-        }
-    
-        #instrTitle {
-          font-weight: 600;
-          margin: 0;
-          text-decoration: underline;
-        }
-        /*Instructor border*/
-        #instrBorder {
-          border-style: double;
-          border-width: 10px;
-          border-color:rgb(68, 167, 162);
-          margin: 10px;
-          border-radius: 5%;
-          padding-top: 15px;
-        }
-    /*=====================*/
-    /* Styling for login.handlebars*/
-    /* Same styling fo register.handlebars*/
-    /*=====================*/
-    #loginCard {
-        max-width: 550px;
-        opacity: 90%;
-        box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-        backdrop-filter: blur(20px);
-        background-color: rgba(245, 244, 244, 0.863);
-        margin: auto;
-    }
-
-    #loginHeader {
-        font-family: 'Cinzel Decorative', cursive; 
-        font-weight: 700;
-        color: rgb(207, 205, 205);
-        background-color:rgb(80, 130, 170);
-        padding-top: 20px;
-    }
-
-    #loginBody {
-      margin:auto;
-      padding: 10px;
-      width: 100%;
-      font-family: 'Cinzel', serif;
-      font-weight: 700;
-      font-size: 18px;
-    }
-    /* Button for login page*/
-    #loginBtn {
-    font-family: 'Cinzel', serif;
-    font-weight: bold;
-    font-size: 18px;
-    background-color: rgb(51, 148, 204);
-    }
-    #loginBtn:hover {
-    background-color: rgb(91, 202, 247);
-    }
-    /*=================*/
-    /* Styling for search2.handlebars*/
-    /*==================*/
-    /* Card styling */
-  #searchTwoCard {
-    margin:auto;
-    margin-top: 100px;
-    max-width: 550px;
-    opacity: 90%;
-    box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-    backdrop-filter: blur(20px);
-    background-color: rgba(245, 244, 244, 0.863);
-  }
-    #resultCard {
-    margin:auto;
-    margin-bottom: 100px;
-    max-width: 800px;
-    opacity: 90%;
-    box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-    backdrop-filter: blur(20px);
-    background-color: rgba(245, 244, 244, 0.863);
-    font-family: 'Cinzel', serif;
-    font-weight: 700;
-    font-size: 15px;
-    list-style: none;
-  }
-
-  #searchTwoHeader {
-    font-family: 'Cinzel Decorative', cursive; 
-    font-weight: 700;
-    color: rgb(207, 205, 205);
-    background-color:rgb(80, 130, 170);
-    padding-top: 20px;
-  }
-
-  #searchTwoBody {
-    padding: auto;
-    padding-left: 30px;
-    max-width: 550px;
-    font-family: 'Cinzel', serif;
-    color: black;
-    font-size: 18px;
-  }
-   #label {
-  font-family: 'Cinzel', serif;
-  font-weight: bold;
-  font-size: 18px;
-  }
-  #addByInstr {
-    font-family: 'Cinzel Decorative', cursive;
-    background-color:teal;
-    color: white;
-    width: 100px;
-  }
-#add, #updateSearch {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 15px;
-    background-color:teal;
-    color: white;
-    height: 50px;
-    margin-left: 10px;
-    padding:4px;
+#jumbo-header {
+	background-color: rgba(158, 183, 204, 0.726);
 }
 
-#addByInstr:hover, #add:hover, #updateSearch:hover {
-  background-color: rgb(39, 221, 197);
-  color: black;
+#mainHead {
+	display: block;
+}
+/*Header nav styling and hover effects*/
+#mainNav {
+	flex-wrap: nowrap;
+	margin-top: 5px;
+	margin-right: 5px;
 }
 
-#searchStyle, #searchLocation, #searchTeacher {
-  font-family: 'Cinzel Decorative', cursive;
-  width: 300px;
+li a {
+	color: rgb(10, 10, 10);
+}
+
+li a:hover {
+	color: rgb(35, 104, 104);
+}
+
+#homeBtn {
+	background-color: teal;
+}
+
+#homeBtn:hover {
+	background-color: aquamarine;
+	color: black;
+}
+/*Footer and heart hover effect */
+#heartFt:hover {
+	color: red;
+}
+
+#footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: rgb(156, 156, 156);
+	text-align: center;
+}
+/*===========================*/
+/*====404.handlebars css====*/
+/*===========================*/
+#notFound {
+	text-align: center;
+	margin: 250px;
+}
+
+#notFound p {
+	font-size: 100px;
+	font-weight: 600;
+	color: burlywood;
+	font-family: 'Cinzel Decorative', cursive;
+}
+/*===========================*/
+/*add.handlebars*/
+/*===========================*/
+
+/* Card styling */
+#addCard {
+	margin: auto;
+	margin-top: 100px;
+	margin-bottom: 50px;
+	max-width: 550px;
+	opacity: 90%;
+	box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+	backdrop-filter: blur(20px);
+	background-color: rgba(245, 244, 244, 0.863);
+}
+
+#addHeader {
+	font-family: 'Cinzel Decorative', cursive;
+	font-weight: 700;
+	color: rgb(207, 205, 205);
+	background-color: rgb(80, 130, 170);
+	padding-top: 20px;
+}
+
+#addCardBody {
+	margin: auto;
+	max-width: 550px;
+}
+/* Select styling */
+#label {
+	font-family: 'Cinzel', serif;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: left;
+}
+/* bottom of card and link font styling */
+#addInst {
+	font-family: 'Cinzel', serif;
+	font-weight: bold;
+	font-size: 13px;
+}
+/* Input and option styling */
+#addTeacher,
+#addDance,
+#addName {
+	font-family: 'Cinzel Decorative', cursive;
+	width: 300px;
+}
+/* Add button and hover styling */
+#add {
+	background-color: teal;
+	color: white;
+	width: 75px;
+	font-family: 'Cinzel Decorative', cursive;
+}
+
+#add:hover {
+	background-color: rgb(39, 221, 197);
+	color: black;
+}
+
+/*===============*/
+/*=======Dances.handlebars css=======*/
+/*===============*/
+#danceCard {
+	margin: auto;
+	margin-top: 100px;
+	margin-bottom: 50px;
+	max-width: 550px;
+	opacity: 90%;
+	box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+	backdrop-filter: blur(20px);
+	background-color: rgba(245, 244, 244, 0.863);
+}
+
+#danceHeader {
+	font-family: 'Cinzel Decorative', cursive;
+	font-weight: 700;
+	color: rgb(207, 205, 205);
+	background-color: rgb(80, 130, 170);
+	padding-top: 20px;
+}
+
+/* List style*/
+#danceList {
+	list-style-type: none;
+	padding-right: 15px;
+	font-family: 'Cinzel', serif;
+	padding-top: 7px;
+	font-weight: 800;
+}
+#danceImgBorder {
+	border-style: double;
+	border-width: 10px;
+	border-color: rgb(68, 167, 162);
+	border-radius: 5%;
+}
+/*==================*/
+/*=====index.handlebars=====*/
+/*==================*/
+#indexCard {
+	margin: auto;
+	margin-top: 100px;
+	margin-bottom: 50px;
+	max-width: 550px;
+	opacity: 90%;
+	box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+	backdrop-filter: blur(20px);
+	background-color: rgba(245, 244, 244, 0.863);
+}
+
+#indexHeader {
+	font-family: 'Cinzel Decorative', cursive;
+	font-weight: 700;
+	color: rgb(207, 205, 205);
+	background-color: rgb(80, 130, 170);
+	padding-top: 20px;
+}
+
+#indexClassList {
+	font-family: 'Cinzel', serif;
+	font-weight: bold;
+	font-size: 18px;
+	padding-right: 15px;
+}
+
+#indexBorder {
+	border-style: double;
+	border-width: 10px;
+	border-color: rgb(68, 167, 162);
+	margin: 10px;
+	border-radius: 5%;
+	padding-top: 15px;
+	padding-bottom: 5px;
+}
+/*===================*/
+/*====index2.handlebars====*/
+/*===================*/
+#inTwoCont {
+	max-width: 750px;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+	margin-bottom: 50px;
+}
+.inTwoCard {
+	opacity: 80%;
+	height: 175px;
+}
+.inTwoTitle {
+	font-weight: 900;
+}
+
+#inTwoBody {
+	margin: auto;
+	max-width: 500px;
+	font-family: 'Cinzel', serif;
+	font-weight: 900;
+}
+
+#inTwoBody h5 {
+	font-size: 20px;
+	padding-top: 10px;
+}
+
+#inTwoCard {
+	margin: auto;
+	margin-top: 100px;
+	max-width: 550px;
+	opacity: 90%;
+	box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+	backdrop-filter: blur(20px);
+	background-color: rgba(245, 244, 244, 0.863);
+}
+
+/* Add button and hover styling */
+#inTwoBtn {
+	font-family: 'Cinzel Decorative', cursive;
+	font-size: 15px;
+	background-color: teal;
+	color: white;
+	width: 130px;
+}
+
+#inTwoBtn:hover {
+	background-color: rgb(39, 221, 197);
+	color: black;
+}
+/*===================*/
+/*instructors.handlebars*/
+/*===================*/
+/* Card styling*/
+#Instructors {
+	margin: auto;
+	margin-top: 100px;
+	margin-bottom: 50px;
+	max-width: 550px;
+	opacity: 90%;
+	box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+	backdrop-filter: blur(20px);
+	background-color: rgba(245, 244, 244, 0.863);
+}
+
+#instrHeader {
+	font-family: 'Cinzel Decorative', cursive;
+	font-weight: 700;
+	color: rgb(207, 205, 205);
+	background-color: rgb(80, 130, 170);
+	padding-top: 20px;
+}
+/*list style*/
+#danceList {
+	list-style-type: none;
+	margin-right: 15px;
+}
+
+#instrTitle {
+	font-weight: 600;
+	margin: 0;
+	text-decoration: underline;
+}
+/*Instructor border*/
+#instrBorder {
+	border-style: double;
+	border-width: 10px;
+	border-color: rgb(68, 167, 162);
+	margin: 10px;
+	border-radius: 5%;
+	padding-top: 15px;
+}
+/*=====================*/
+/* Styling for login.handlebars*/
+/* Same styling fo register.handlebars*/
+/*=====================*/
+#loginCard {
+	max-width: 550px;
+	opacity: 90%;
+	box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+	backdrop-filter: blur(20px);
+	background-color: rgba(245, 244, 244, 0.863);
+	margin: auto;
+}
+
+#loginHeader {
+	font-family: 'Cinzel Decorative', cursive;
+	font-weight: 700;
+	color: rgb(207, 205, 205);
+	background-color: rgb(80, 130, 170);
+	padding-top: 20px;
+}
+
+#loginBody {
+	margin: auto;
+	padding: 10px;
+	width: 100%;
+	font-family: 'Cinzel', serif;
+	font-weight: 700;
+	font-size: 18px;
+}
+/* Button for login page*/
+#loginBtn {
+	font-family: 'Cinzel', serif;
+	font-weight: bold;
+	font-size: 18px;
+	background-color: rgb(51, 148, 204);
+}
+#loginBtn:hover {
+	background-color: rgb(91, 202, 247);
+}
+/*=================*/
+/* Styling for search2.handlebars*/
+/*==================*/
+/* Card styling */
+#searchTwoCard {
+	margin: auto;
+	margin-top: 100px;
+	max-width: 550px;
+	opacity: 90%;
+	box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+	backdrop-filter: blur(20px);
+	background-color: rgba(245, 244, 244, 0.863);
+}
+#resultCard {
+	margin: auto;
+	margin-bottom: 100px;
+	max-width: 800px;
+	opacity: 90%;
+	box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+	backdrop-filter: blur(20px);
+	background-color: rgba(245, 244, 244, 0.863);
+	font-family: 'Cinzel', serif;
+	font-weight: 700;
+	font-size: 15px;
+	list-style: none;
+}
+
+#searchTwoHeader {
+	font-family: 'Cinzel Decorative', cursive;
+	font-weight: 700;
+	color: rgb(207, 205, 205);
+	background-color: rgb(80, 130, 170);
+	padding-top: 20px;
+}
+
+#searchTwoBody {
+	padding: auto;
+	padding-left: 30px;
+	max-width: 550px;
+	font-family: 'Cinzel', serif;
+	color: black;
+	font-size: 18px;
+}
+#label {
+	font-family: 'Cinzel', serif;
+	font-weight: bold;
+	font-size: 18px;
+}
+#addByInstr {
+	font-family: 'Cinzel Decorative', cursive;
+	background-color: teal;
+	color: white;
+	width: 100px;
+}
+#add,
+#updateSearch {
+	font-family: 'Cinzel Decorative', cursive;
+	font-size: 15px;
+	background-color: teal;
+	color: white;
+	height: 50px;
+	margin-left: 10px;
+	padding: 4px;
+}
+
+#addByInstr:hover,
+#add:hover,
+#updateSearch:hover {
+	background-color: rgb(39, 221, 197);
+	color: black;
+}
+
+#searchStyle,
+#searchLocation,
+#searchTeacher {
+	font-family: 'Cinzel Decorative', cursive;
+	width: 300px;
 }
 /*=====================*/
 /* Styling for teacher.handlebars*/
 /*=====================*/
 /* Card styling */
 #teacherCard {
-    margin:auto;
-    margin-top: 100px;
-    max-width: 550px;
-    opacity: 90%;
-    box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-    backdrop-filter: blur(20px);
-    background-color: rgba(245, 244, 244, 0.863);
-    }
+	margin: auto;
+	margin-top: 100px;
+	max-width: 550px;
+	opacity: 90%;
+	box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+	backdrop-filter: blur(20px);
+	background-color: rgba(245, 244, 244, 0.863);
+}
 
-  #teacherHeader {
-    font-family: 'Cinzel Decorative', cursive; 
-    font-weight: 700;
-    color: rgb(207, 205, 205);
-    background-color:rgb(80, 130, 170);
-    padding-top: 20px;
-    }
+#teacherHeader {
+	font-family: 'Cinzel Decorative', cursive;
+	font-weight: 700;
+	color: rgb(207, 205, 205);
+	background-color: rgb(80, 130, 170);
+	padding-top: 20px;
+}
 
-    #teacherCardBody {
-      padding-left: 50px;
-      padding-top: 25px;
-      max-width: 550px;
-      font-family: 'Cinzel', serif;
-      font-weight: 900;
-      font-size: 18px;
-    }
-    /* Styling of text areas*/
-    .textName {
-      font-family: 'Cinzel Decorative', cursive;
-    }
-    /* Add button and hover styling */
-    #addTeach {
-      font-family: 'Cinzel Decorative', cursive;
-      background-color:teal;
-      color: white;
-      width: 75px;
-    }
+#teacherCardBody {
+	padding-left: 50px;
+	padding-top: 25px;
+	max-width: 550px;
+	font-family: 'Cinzel', serif;
+	font-weight: 900;
+	font-size: 18px;
+}
+/* Styling of text areas*/
+.textName {
+	font-family: 'Cinzel Decorative', cursive;
+}
+/* Add button and hover styling */
+#addTeach {
+	font-family: 'Cinzel Decorative', cursive;
+	background-color: teal;
+	color: white;
+	width: 75px;
+}
 
-      #addTeach:hover {
-      background-color: rgb(39, 221, 197);
-      color: black;
-    }
-    /*====================*/
-    /* Styling for teacher.handlebars*/
-    /*====================*/
-    /* Card styling */
-    #updateCard {
-    margin:auto;
-    margin-top: 100px;
-    max-width: 550px;
-    opacity: 90%;
-    box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-    backdrop-filter: blur(20px);
-    background-color: rgba(245, 244, 244, 0.863);
-    }
+#addTeach:hover {
+	background-color: rgb(39, 221, 197);
+	color: black;
+}
+/*====================*/
+/* Styling for teacher.handlebars*/
+/*====================*/
+/* Card styling */
+#updateCard {
+	margin: auto;
+	margin-top: 100px;
+	max-width: 550px;
+	opacity: 90%;
+	box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+	backdrop-filter: blur(20px);
+	background-color: rgba(245, 244, 244, 0.863);
+}
 
-    #updateHeader {
-    font-family: 'Cinzel Decorative', cursive; 
-    font-weight: 700;
-    color: rgb(207, 205, 205);
-    background-color:rgb(80, 130, 170);
-    padding-top: 20px;
-    }
+#updateHeader {
+	font-family: 'Cinzel Decorative', cursive;
+	font-weight: 700;
+	color: rgb(207, 205, 205);
+	background-color: rgb(80, 130, 170);
+	padding-top: 20px;
+}
 
-    #updateCardBody {
-      padding-left: 50px;
-      padding-top: 25px;
-      max-width: 550px;
-      font-family: 'Cinzel', serif;
-      font-weight: 900;
-      font-size: 18px;
-    }
-    /* Styling of text areas*/
-    .updateText {
-      font-family: 'Cinzel Decorative', cursive;
-    }
-    /* Add button and hover styling */
-    #updateAdd {
-      font-family: 'Cinzel Decorative', cursive;
-      background-color:teal;
-      color: white;
-      width: 75px;
-  }
+#updateCardBody {
+	padding-left: 50px;
+	padding-top: 25px;
+	max-width: 550px;
+	font-family: 'Cinzel', serif;
+	font-weight: 900;
+	font-size: 18px;
+}
+/* Styling of text areas*/
+.updateText {
+	font-family: 'Cinzel Decorative', cursive;
+}
+/* Add button and hover styling */
+#updateAdd {
+	font-family: 'Cinzel Decorative', cursive;
+	background-color: teal;
+	color: white;
+	width: 75px;
+}
 
-      #updateAdd:hover {
-      background-color: rgb(39, 221, 197);
-      color: black;
-    }
-    /*=======================*/
-    /* Us.handlebars styling */
-    /*=======================*/
-    /* Card styling */
-    #profileImg {
-        object-fit: cover;
-        height: 200px;
-        width: 200px;
-        border-radius: 50%;
-        filter: drop-shadow(0 10px 0.90rem rgb(31, 30, 30));
-    }
+#updateAdd:hover {
+	background-color: rgb(39, 221, 197);
+	color: black;
+}
+/*=======================*/
+/* Us.handlebars styling */
+/*=======================*/
+/* Card styling */
+#profileImg {
+	object-fit: cover;
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	filter: drop-shadow(0 10px 0.90rem rgb(31, 30, 30));
+}
 
-    #profileCard {
-        align-items: center;
-        margin: 20px;
-        margin-top: 130px;
-        display: flex;
-        min-width: 250px;
-        padding: 10px;
-        filter: drop-shadow(0 0 0.75rem rgb(7, 24, 39));
-    }
+#profileCard {
+	align-items: center;
+	margin: 20px;
+	margin-top: 130px;
+	display: flex;
+	min-width: 250px;
+	padding: 10px;
+	filter: drop-shadow(0 0 0.75rem rgb(7, 24, 39));
+}
 /* Link hover effect- found at: 
 https://css-tricks.com/having-fun-with-link-hover-effects//*/
 :root {
-    --mainColor: rgb(17, 127, 131);
+	--mainColor: rgb(17, 127, 131);
 }
 .profile-body a {
-  color: var(--mainColor);
-  text-decoration: none;
+	color: var(--mainColor);
+	text-decoration: none;
 }
 
 .profile-body a:hover {
-  color: transparent;
-  -webkit-text-stroke: 2px var(--mainColor);
+	color: transparent;
+	-webkit-text-stroke: 2px var(--mainColor);
 }
 /*effect when hovering over link*/
 @supports not(-webkit-text-stroke: 2px red) {
-  .profile-body a:hover {
-    text-shadow:
-      3px 3px 0 var(--mainColor),
-      -1px -1px 0 var(--mainColor),
-      1px -1px 0 var(--mainColor),
-      -1px 1px 0 var(--mainColor),
-      1px 1px 0 var(--mainColor);
-  }
+	.profile-body a:hover {
+		text-shadow: 3px 3px 0 var(--mainColor), -1px -1px 0 var(--mainColor), 1px -1px 0 var(--mainColor),
+			-1px 1px 0 var(--mainColor), 1px 1px 0 var(--mainColor);
+	}
 }
 
 .profile-text {
-  font-family: 'Cinzel', serif;
-  font-weight: 600;
-  font-size: 20px;
-  padding-top:10px;
+	font-family: 'Cinzel', serif;
+	font-weight: 600;
+	font-size: 20px;
+	padding-top: 10px;
 }
 /*======================*/
 /*v-details.handlebars styling*/
 /*======================*/
 #newCard {
-    margin:auto;
-    margin-top: 100px;
-    margin-bottom: 50px;
-    max-width: 550px;
-    opacity: 90%;
-    box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-    backdrop-filter: blur(20px);
-    background-color: rgba(245, 244, 244, 0.863);
+	margin: auto;
+	margin-top: 100px;
+	margin-bottom: 50px;
+	max-width: 550px;
+	opacity: 90%;
+	box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
+	backdrop-filter: blur(20px);
+	background-color: rgba(245, 244, 244, 0.863);
 }
 
 #newHeader {
-    font-family: 'Cinzel Decorative', cursive; 
-    font-weight: 700;
-    color: rgb(207, 205, 205);
-    background-color:rgb(80, 130, 170);
-    padding-top: 20px;
+	font-family: 'Cinzel Decorative', cursive;
+	font-weight: 700;
+	color: rgb(207, 205, 205);
+	background-color: rgb(80, 130, 170);
+	padding-top: 20px;
 }
 
 #newCardBody {
-  margin:auto;
-  width: 100%;
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 18px;
+	margin: auto;
+	width: 100%;
+	font-family: 'Cinzel', serif;
+	font-weight: 700;
+	font-size: 18px;
 }
 
 #addInst {
-font-family: 'Cinzel', serif;
-font-weight: bold;
-font-size: 18px;
+	font-family: 'Cinzel', serif;
+	font-weight: bold;
+	font-size: 18px;
 }
