@@ -1,17 +1,26 @@
-
+//Pathing
 var path = require("path");
 var db = require("../models");
+const session = require('express-session');
+var exphbs = require("express-handlebars");
 
 
 module.exports = function(app) {
 
-  // Each of the below routes just handles the HTML view that the user gets sent to.
+  const requireLogin = (req, res, next) => {
+    if (!req.user) {
+      return res.redirect('/login')
+    }
+    next();
+  }
 
-  // index route loads index.handlebars
   app.get("/", function(req, res) {
-    res.render(path.join(__dirname, "../views/index.handlebars"));
+          res.redirect("/index");
   });
 
+  app.get('/index', requireLogin, function (req,res) {
+    res.render('index2');
+  })
 
   app.get("/search", function(req, res) {
     var classArray = [];
@@ -23,7 +32,6 @@ module.exports = function(app) {
         var hbsObject = {
             classes: classArray
           };
-        console.log(hbsObject);
         res.render("index", hbsObject); 
 
     });
@@ -39,8 +47,6 @@ module.exports = function(app) {
         instructorID: idParams[1]
       }
     }).then(function(results) {
-      console.log(results.dataValues.Dance.dataValues.danceTitle);
-      console.log(results.dataValues.Instructor.dataValues.name + " " + results.dataValues.Instructor.dataValues.lastName)
       var selectedDanceName = results.dataValues.Dance.dataValues.danceTitle;
       var selectedInstructorName = results.dataValues.Instructor.dataValues.name;
       var selectedInstructorLastName = results.dataValues.Instructor.dataValues.lastName;
@@ -52,12 +58,54 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/dances", function(req, res) {
+    var danceArray = [];
+    db.Dance.findAll({
+    }).then(function(results) {
+        results.forEach(element =>
+          danceArray.push(element.dataValues));
+        console.log(danceArray)
+        var hbsObject = {
+            dances: danceArray
+          };
+        console.log(hbsObject);
+        res.render("dances", hbsObject); 
+
+    });
+  });
+
+  app.get("/instructor/:id", function(req, res) {
+    db.Instructor.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(results) {
+      console.log(results.dataValues);
+      res.render("update_instr", results.dataValues);
+    });
+  });
+
+  app.get("/instructors", function(req, res) {
+    var instArray = [];
+    db.Instructor.findAll({
+    }).then(function(results) {
+        results.forEach(element =>
+          instArray.push(element.dataValues));
+        console.log(instArray)
+        var hbsObject = {
+            instructors: instArray
+          };
+        console.log(hbsObject);
+        res.render("instructors", hbsObject); 
+
+    });
+  });
+
 
   app.get("/notfound", function(req,res) {
     res.render("404");
   });
 
-/* New Class (Class name, type, teacher) */
   app.get("/add", function(req, res) {
     var danceArray = [];
     var instrArray = [];
@@ -65,17 +113,14 @@ module.exports = function(app) {
     }).then(function(results) {
         results.forEach(element =>
           danceArray.push(element.dataValues));
-        console.log(danceArray)
         db.Instructor.findAll({
         }).then(function(data) {
           data.forEach(element =>
             instrArray.push(element.dataValues));
-          console.log(instrArray);
           var hbsObject = {
             dances: danceArray,
             instructors: instrArray
           }
-          console.log(hbsObject);
           res.render("add", hbsObject);
         })
     });
@@ -89,27 +134,29 @@ module.exports = function(app) {
     }).then(function(results) {
         results.forEach(element =>
           danceArray.push(element.dataValues));
-        console.log(danceArray)
         db.Instructor.findAll({
         }).then(function(data) {
           data.forEach(element =>
             instrArray.push(element.dataValues));
-          console.log(instrArray);
           var hbsObject = {
             dances: danceArray,
             instructors: instrArray
           }
-          console.log(hbsObject);
           res.render("search2", hbsObject);
         })
     });
   });
 
   app.get("/index", function(req, res) {
-    res.render("index2");
+    var isInstructor = req.session.passport.user.dataValues.isInstructor;
+    var hbsObject = {
+      isInstructor: req.session.passport.user.dataValues.isInstructor,
+      isInstructor: true
+    }
+    res.render("index", hbsObject);
   });
 
-  app.get("/us", function(req, res) {
+  app.get("/us", requireLogin, function(req, res) {
     res.render("us");
   });
 
@@ -117,12 +164,16 @@ module.exports = function(app) {
     res.render("teacher");
   });
 
-  app.get("/register", function(req, res) {
-    res.render("register");
-  });
+    app.get("/register", function(req, res) {
+      res.render("register");
+    });   
 
-  app.get("/login", function(req, res) {
-    res.render("login");
-  });
+    app.get("/login", function(req, res) {
+          res.render("login");
+      });
 
+    app.get("/logout", function(req, res) {
+      res.render("login");
+    }); 
 };
+
