@@ -14,11 +14,11 @@ and our own server-side API to produce a database for different dance classes. T
 
 💻 HTML generated:
 ===================
-[Live Application on Heroku]()
+[Live Application on Heroku](https://dance-class-search.herokuapp.com/login)
 
-🎥 Screen Shot of Live app:
+🎥 Figure Showing the Three Tables:
 ==============================
-![Photo of App](...)
+![Tables](./public/img/DanceDB.png)
 
 ## User Story
 
@@ -30,19 +30,17 @@ SO THAT I can better organize my dance schedule.
 
 ## Technologies used
 ```
-- JQUERY
-    *
+- Express-Session + Express
 - Handlebars
-    *
+- Passport
+- MySQL
 - Sequelize
-    *
--Express
-    *
-_
-    *
--
-    *
-
+- EsLint
+- Clickup
+- Figma
+- bcryptjs
+- Travis (the testing framework that you hooked up to our repo)
+- Heroku
 ```
 
 ## Installation
@@ -52,7 +50,7 @@ _
 
 ## Future development
 ```
+One of our main goals in future development in the backend, is to implicate user authenticity to restrict and allow different features based on if a teacher or student logs in.  
+
+Some future plans for the front end will be to link demo videos to different dance types and to allow users to make simple profiles where classes can be saved.
 ```
-
-
-
