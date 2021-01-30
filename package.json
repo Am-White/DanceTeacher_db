@@ -18,7 +18,9 @@
     "sequelize": "^6.3.5",
     "sequelize-cli": "^6.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^7.18.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
