@@ -8,10 +8,12 @@
     <ul id = "danceList" class="text-center">
       {{#each instructors}}
       <li>
+
         <div id="instrBorder">
         <p id="instrTitle">Instructor's Name:</p>{{this.name}} , {{this.lastName}}
         <p id="instrTitle">Location: </p>{{this.location}} <br>
         <p id="instrTitle">Hourly Rate: </p> {{this.hourlyRate}}<p id="instTitle"> Rating: </p> {{this.rating}}
+
         <br>
         <a id="openBtn" href="http://localhost:8080/instructor/{{id}}" class="btn btn-outline-info">Edit Details</a>
         <br><br>
