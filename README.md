@@ -3,7 +3,7 @@
 ## Application Description
 
 This is a full-stack web application that uses the MVC paradigm 
-and our own server-side API to produce a database for different dance classes. These dance classes can be accessed by students or teachers, they can be searched using numerous identifiers. Classes can also be added to the database.
+and our own server-side API to produce a database for different dance classes. These dance classes can be accessed by students or teachers, they can be searched using numerous identifiers. Classes and Instructors can also be added to the database.
 
 ## Table of Contents
 - [Description](#description)
@@ -20,12 +20,25 @@ and our own server-side API to produce a database for different dance classes. T
 ==============================
 ![Tables](./public/img/DanceDB.png)
 
+🎥 Login Page:
+==============================
+![Login](./public/img/loginscreenshot.png)
+
+🎥 Main Page:
+==============================
+![Main](./public/img/mainscreenshot.png)
+
+
 ## User Story
 
 ```
-AS A dancer( teacher or student) I want be able to search through dance classes,
-I WANT to be able to add and delete classes,
-SO THAT I can better organize my dance schedule.
+AS A student I want be able to search through dance classes,
+I WANT to be able to look through new styles of dance and instructors,
+SO THAT I can find more lessons to take.
+
+AS A teacher I want to be able to post about new classes,
+I WANT to be able to add new classes and instructors,
+SO THAT I can offer more variety to students.
 ```
 
 ## Technologies used
