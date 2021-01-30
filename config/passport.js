@@ -24,7 +24,11 @@ passport.use(new LocalStrategy(
       // If there is a user with the given email, but the password the user gives us is incorrect
       else if (!dbUser.validPassword(password)) {
         return done(null, false, {
+<<<<<<< HEAD
           message: "Incorrect password."
+=======
+          message: 'Incorrect password.'
+>>>>>>> parent of 8058ac1... Merge branch 'main' into ame-16
         });
       }
       // If none of the above, return the user
