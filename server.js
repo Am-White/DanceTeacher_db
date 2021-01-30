@@ -7,6 +7,7 @@
 require('dotenv').config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+// eslint-disable-next-line no-unused-vars
 const path = require("path");
 var bodyParser = require('body-parser')
 // console.log(process.env)
