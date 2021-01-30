@@ -1,72 +1,25 @@
-<style>
-/* Styling for teacher.handlebars*/
-/* Card styling */
-  #searchCard {
-    margin:auto;
-    margin-top: 100px;
-    max-width: 550px;
-    opacity: 90%;
-    box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-    backdrop-filter: blur(20px);
-    background-color: rgba(245, 244, 244, 0.863);
-    }
-
-  #searchHeader {
-    font-family: 'Cinzel Decorative', cursive; 
-    font-weight: 700;
-    color: rgb(207, 205, 205);
-    background-color:rgb(80, 130, 170);
-    padding-top: 20px;
-    }
-
-    #cardBody {
-      padding-left: 50px;
-      padding-top: 25px;
-      max-width: 550px;
-      font-family: 'Cinzel', serif;
-      font-weight: 900;
-      font-size: 18px;
-    }
-    /* Styling of text areas*/
-    textarea {
-      font-family: 'Cinzel Decorative', cursive;
-    }
-    /* Add button and hover styling */
-    #add {
-      font-family: 'Cinzel Decorative', cursive;
-      background-color:teal;
-      color: white;
-      width: 75px;
-  }
-
-      #add:hover {
-      background-color: rgb(39, 221, 197);
-      color: black;
-    }
-
-</style>
-
+<script src="../public/js/update_instr.js"></script>
 {{!-- <h1>Hello</h1> --}}
 
 <div class="container">
 
-  <div class="card" id="searchCard">
-  <div id="searchHeader" class="card-header text-center">
+  <div class="card" id="updateCard">
+  <div id="updateHeader" class="card-header text-center">
     <h3>Update Instructor's Details </h3>
     <p>Instructor: {{this.name}} {{this.lastName}} </p>
     <p id= "id">{{this.id}}</p>
   </div>
 
-  <div class="card-body" id="cardBody">
+  <div class="card-body" id="updateCardBody">
 
 {{!Enter rating}}
   <div class="row">
-    <div class="col-4 text-right">
+    <div class="col-4 text-left">
         <label>Rating:</label>
     </div>
     <div class="col-6">
         <search name="rating" id="newRating">
-            <textarea id = "rating" type="text" name="rating" placeholder = "Out of 5"></textarea>
+            <textarea class="updateText" id = "rating" type="text" name="rating" placeholder = "Out of 5"></textarea>
         </search>
       </div> 
         </div>
@@ -78,7 +31,7 @@
     </div>
       <div class="col-6">
       <search name="location" id="newLocation">
-          <textarea id = "location" type="text" name="location"></textarea>
+          <textarea class="updateText" id = "location" type="text" name="location"></textarea>
       </search>
       </div> 
   </div>
@@ -90,13 +43,13 @@
       </div> 
       <div class="col-6">
         <search name="price" id="newPrice">
-            <textarea id = "hrate" type="text" name="instructor_name"></textarea>
+            <textarea class="updateText" id = "hrate" type="text" name="instructor_name"></textarea>
         </search>
       </div>  
     </div> <br>
 
 <div class="d-flex justify-content-center">
-  <button id = "add" class="btn" type="button">Update </button>
+  <button id = "updateAdd" class="btn" type="button">Update </button>
 </div>
   </div>
   <div class="card-footer text-muted">
@@ -104,11 +57,9 @@
   </div>
 </div>
 
-
-
-
-<script type="text/javascript">
-$("#add").on("click", function () {
+<script>
+  /* eslint-disable no-undef */
+$("#updateAdd").on("click", function () {
     var id = $("#id").text();
     console.log(id)
     console.log("/api/instructors/" + id);
@@ -130,4 +81,3 @@ $("#add").on("click", function () {
   });
 
 </script>
-

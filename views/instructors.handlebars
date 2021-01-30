@@ -1,62 +1,17 @@
 
-<style media="screen">
-  /* Styling instructors.handlebars*/
-  /* Card styling*/
-    #Instructors {
-    margin:auto;
-    margin-top: 100px;
-    margin-bottom: 50px;
-    max-width: 550px;
-    opacity: 90%;
-    box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-    backdrop-filter: blur(20px);
-    background-color: rgba(245, 244, 244, 0.863);
-    }
-
-    #headerTeach {
-    font-family: 'Cinzel Decorative', cursive; 
-    font-weight: 700;
-    color: rgb(207, 205, 205);
-    background-color:rgb(80, 130, 170);
-    padding-top: 20px;
-    }
-
-    #danceList {
-      list-style-type: none;
-      margin-right: 15px;
-    }
-
-    #instTitle {
-      font-weight: 600;
-      margin: 0;
-      text-decoration: underline;
-    }
-
-    #border {
-      border-style: double;
-      border-width: 10px;
-      border-color:rgb(68, 167, 162);
-      margin: 10px;
-      border-radius: 5%;
-      padding-top: 15px;
-    }
-    
-</style>
-
 <div id="center" class="container">
   <div class="card" id="Instructors">
-    <div id="headerTeach" class="card-header text-center">
+    <div id="instrHeader" class="card-header text-center">
       <h2> Our Instructors:</h2>
     </div>
 
     <ul id = "danceList" class="text-center">
       {{#each instructors}}
       <li>
-
-        <div id="border">
-        <p id="instTitle">Instructor's Name:</p>{{this.name}} , {{this.lastName}}
-        <p id="instTitle">Location: </p>{{this.location}} <br>
-        <p id="instTitle">Hourly Rate: </p> {{this.hourlyRate}}<p id="instTitle"> Rating: </p> {{this.rating}}
+        <div id="instrBorder">
+        <p id="instrTitle">Instructor's Name:</p>{{this.name}} , {{this.lastName}}
+        <p id="instrTitle">Location: </p>{{this.location}} <br>
+        <p id="instrTitle">Hourly Rate: </p> {{this.hourlyRate}}<p id="instTitle"> Rating: </p> {{this.rating}}
         <br>
         <a id="openBtn" href="http://localhost:8080/instructor/{{id}}" class="btn btn-outline-info">Edit Details</a>
         <br><br>
