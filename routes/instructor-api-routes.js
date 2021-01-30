@@ -1,9 +1,3 @@
-// *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
-
-// Dependencies
-// =============================================================
 
 // Requiring our models
 var db = require("../models");
@@ -20,34 +14,6 @@ module.exports = function(app) {
       console.log(results);
     });
   });
-
-  app.get("/instructor/:id", function(req, res) {
-    db.Instructor.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(results) {
-      console.log(results.dataValues);
-      res.render("update_instr", results.dataValues);
-    });
-  });
-
-  app.get("/instructors", function(req, res) {
-    var instArray = [];
-    db.Instructor.findAll({
-    }).then(function(results) {
-        results.forEach(element =>
-          instArray.push(element.dataValues));
-        console.log(instArray)
-        var hbsObject = {
-            instructors: instArray
-          };
-        console.log(hbsObject);
-        res.render("instructors", hbsObject); 
-
-    });
-  });
-
 
 
   app.post("/api/instructors", function(req, res) {
