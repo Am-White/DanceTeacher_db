@@ -38,12 +38,12 @@ app.set("view engine", "handlebars");
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);
-const userAuth = require("./routes/userAuthRoutes.js");
-//const userR = require("./routes/userAuthRoutes.js");
+require("./routes/userAuthRoutes.js")(app);
+require("./routes/userRoute.js")(app);
 require("./routes/dance-api-routes.js")(app);
 require("./routes/class-api-routes.js")(app);
 require("./routes/instructor-api-routes.js")(app);
-app.use(userAuth);
+// app.use(userAuth);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync().then(function() {
