@@ -1,68 +1,13 @@
-<style media="screen">
-  /* Styling of index2.handlebars*/
-    #opening {
-        max-width: 750px;
-        margin: auto;
-        text-align: center;
-        padding-top: 100px;
-        margin-bottom: 50px;
-    }
-    .card {
-        opacity: 80%;
-        height: 175px;
-    }
-    .card-title {
-      font-weight: 900;
-    }
 
-    #cardBody {
-      margin:auto;
-      max-width: 500px;
-      font-family: 'Cinzel', serif;
-      font-weight: 900;
-    }
-
-    #cardBody h5 {
-      font-size: 20px;
-      padding-top:10px;
-    }
-
-    #searchCard {
-      margin:auto;
-      margin-top: 100px;
-      max-width: 550px;
-      opacity: 90%;
-      box-shadow: 01px 0px 5px 3px rgba(24, 21, 21, 0.39);
-      backdrop-filter: blur(20px);
-      background-color: rgba(245, 244, 244, 0.863);
-    }
-
-    /* Add button and hover styling */
-    #openBtn {
-      font-family: 'Cinzel Decorative', cursive;
-      font-size: 15px;
-      background-color:teal;
-      color: white;
-      width: 130px;
-  }
-
-      #openBtn:hover {
-      background-color: rgb(39, 221, 197);
-      color: black;
-    }
-
-</style>
-
-
-<div id="opening" class="row" data-wow-duration="0.75s" data-wow-delay=".5s">
+<div id="inTwoCont" class="row" data-wow-duration="0.75s" data-wow-delay=".5s">
 
   <div id="openCard" class="col-sm-4">
     
-    <div class="card" id="searchCard">
-      <div class="card-body" id="cardBody">
-        <h5 class="card-title">View Dance Classes</h5>
+    <div class="inTwoCard"  id="inTwoCard">
+      <div class="card-body" id="inTwoBody">
+        <h5 class="inTwoTitle">View Dance Classes</h5>
         <p class="card-text"> ... </p>
-        <a id="openBtn" href="http://localhost:8080/search" class="btn">Student</a>
+        <a id="inTwoBtn" href="http://localhost:8080/search" class="btn">Student</a>
       </div>
     </div>
   </div>
@@ -70,11 +15,11 @@
 
   <div id="openCard" class="col-sm-4" data-wow-duration="0.75s" data-wow-delay=".5s">
 
-    <div class="card"id="searchCard">
-      <div class="card-body" id="cardBody">
-        <h5 class="card-title">View Dance Styles</h5>
+    <div class="inTwoCard" id="inTwoCard">
+      <div class="card-body" id="inTwoBody">
+        <h5 class="inTwoTitle">View Dance Styles</h5>
         <p class="card-text"> ... </p>
-        <a id="openBtn" href="http://localhost:8080/dances" class="btn">Student</a>
+        <a id="inTwoBtn" href="http://localhost:8080/dances" class="btn">Student</a>
       </div>
     </div>
 
@@ -82,11 +27,11 @@
 
     <div id="openCard" class="col-sm-4" data-wow-duration="0.75s" data-wow-delay=".5s">
 
-    <div class="card"id="searchCard">
-      <div class="card-body" id="cardBody">
-        <h5 class="card-title">View Instructors</h5>
+    <div class="inTwoCard" id="inTwoCard">
+      <div class="card-body" id="inTwoBody">
+        <h5 class="inTwoTitle">View Instructors</h5>
         <p class="card-text"> ... </p>
-        <a id="openBtn" href="http://localhost:8080/instructors" class="btn">Student</a>
+        <a id="inTwoBtn" href="http://localhost:8080/instructors" class="btn">Student</a>
       </div>
     </div>
 
@@ -94,11 +39,11 @@
   
   <div id="openCard" class="col-sm-4" data-wow-duration="0.75s" data-wow-delay=".5s">
 
-    <div class="card" id="searchCard">
-      <div class="card-body" id="cardBody">
-        <h5 class="card-title">Add a Class</h5>
+    <div class="inTwoCard"  id="inTwoCard">
+      <div class="card-body" id="inTwoBody">
+        <h5 class="inTwoTitle">Add a Class</h5>
         <p class="card-text"> ... </p>
-        <a id="openBtn" href="http://localhost:8080/add" class="btn">Instructor</a>
+        <a id="inTwoBtn" href="http://localhost:8080/add" class="btn">Instructor</a>
       </div>
     </div>
 
@@ -106,11 +51,11 @@
 
   <div id="openCard" class="col-sm-4" data-wow-duration="0.75s" data-wow-delay=".5s">
 
-    <div class="card"id="searchCard">
-      <div class="card-body" id="cardBody">
-        <h5 class="card-title">Add an Instructor</h5>
+    <div class="inTwoCard" id="inTwoCard">
+      <div class="card-body" id="inTwoBody">
+        <h5 class="inTwoTitle">Add an Instructor</h5>
         <p class="card-text"> ... </p>
-        <a id="openBtn" href="http://localhost:8080/teacher" class="btn">Instructor</a>
+        <a id="inTwoBtn" href="http://localhost:8080/teacher" class="btn">Instructor</a>
       </div>
     </div>
 
@@ -118,11 +63,11 @@
 
     <div id="openCard" class="col-sm-4" data-wow-duration="0.75s" data-wow-delay=".5s">
 
-    <div class="card"id="searchCard">
-      <div class="card-body" id="cardBody">
-        <h5 class="card-title">Search Dance Classes</h5>
+    <div class="inTwoCard" id="inTwoCard">
+      <div class="card-body" id="inTwoBody">
+        <h5 class="inTwoTitle">Search Dance Classes</h5>
         <p class="card-text"> ... </p>
-        <a id="openBtn" href="http://localhost:8080/search2" class="btn">Student</a>
+        <a id="inTwoBtn" href="http://localhost:8080/search2" class="btn">Student</a>
       </div>
     </div>
 

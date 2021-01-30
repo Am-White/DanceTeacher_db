@@ -9,7 +9,8 @@ require('dotenv').config();
 var session = require('express-session')
 var express = require("express");
 var exphbs = require("express-handlebars");
-var passport = require('./config/passport')
+var passport = require('./config/passport');
+var path = require("path");
 // console.log(process.env)
 // Sets up the Express App
 // =============================================================
